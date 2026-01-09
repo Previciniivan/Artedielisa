@@ -1,86 +1,37 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+/* Menu */
+nav.menu {
+    margin-top: 20px;
 }
 
-body {
-    background-color: #ffffff;
-    color: #1f3b5b;
-    line-height: 1.6;
-}
-
-/* HEADER */
-header {
-    background: linear-gradient(135deg, #1f3b5b, #3f5f8f);
+nav.menu a {
+    margin: 0 15px;
     color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.logo {
-    width: 120px;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    font-size: 3rem;
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-/* SEZIONI */
-section {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-section p,
-section ul {
-    font-size: 1.1rem;
-    text-align: center;
-}
-
-section ul {
-    list-style: none;
-}
-
-section ul li {
-    margin: 10px 0;
-}
-
-/* LINK */
-a {
-    color: #3f5f8f;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
 }
 
-a:hover {
+nav.menu a:hover {
     text-decoration: underline;
 }
 
-/* SFONDO CHIARO */
-.bg-light {
-    background-color: #f5f7fa;
+/* Tabelle trattamenti */
+table {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    border-collapse: collapse;
 }
 
-/* FOOTER */
-footer {
-    background-color: #1f3b5b;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+table td:first-child {
+    text-align: left;
+}
+
+table td:last-child {
+    text-align: right;
+    font-weight: bold;
 }
