@@ -12,6 +12,12 @@
     <img src="logo.png" alt="Artedielisa logo" class="logo">
     <h1>Artedielisa</h1>
     <p>Benessere, bellezza e cura di te</p>
+    <nav class="menu">
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#trattamenti">Trattamenti</a>
+        <a href="#dove-mi-trovo">Dove mi trovo</a>
+        <a href="#contatti">Contatti</a>
+    </nav>
 </header>
 
 <section id="chi-sono">
@@ -23,14 +29,91 @@
     </p>
 </section>
 
-<section id="perche-scegliermi" class="bg-light">
-    <h2>Perché scegliere me</h2>
-    <ul>
-        <li>Trattamenti personalizzati</li>
-        <li>Prodotti di alta qualità</li>
-        <li>Ambiente rilassante e professionale</li>
-        <li>Attenzione ai dettagli</li>
-    </ul>
+<section id="trattamenti" class="bg-light">
+    <h2>Trattamenti</h2>
+
+    <!-- Manicure -->
+    <h3>Manicure</h3>
+    <table>
+        <tr><td>Manicure</td><td>20€</td></tr>
+        <tr><td>Mani con semi</td><td>25€</td></tr>
+        <tr><td>Mani con semi rinforzato</td><td>30€</td></tr>
+        <tr><td>Copertura gel</td><td>25€</td></tr>
+        <tr><td>Ricostruzione unghie</td><td>40€</td></tr>
+        <tr><td>Refill</td><td>25€</td></tr>
+        <tr><td>Rimozione semi</td><td>10€</td></tr>
+        <tr><td>Rimozione gel</td><td>15€</td></tr>
+        <tr><td>Ricostruzione unghie singola</td><td>5€</td></tr>
+    </table>
+
+    <!-- Pedicure -->
+    <h3>Pedicure</h3>
+    <table>
+        <tr><td>Pedicure estetico</td><td>25€</td></tr>
+        <tr><td>Pedicure estetico con semi</td><td>30€</td></tr>
+        <tr><td>Pedicure curativo</td><td>35€</td></tr>
+        <tr><td>Pedicure curativo con semi</td><td>40€</td></tr>
+        <tr><td>Rimozione calli</td><td>15€</td></tr>
+    </table>
+
+    <!-- Trattamenti viso -->
+    <h3>Trattamenti viso</h3>
+    <table>
+        <tr><td>Pulizia viso base</td><td>40€</td></tr>
+    </table>
+
+    <!-- Epilazione -->
+    <h3>Epilazione</h3>
+    <table>
+        <tr><td>Sopracciglia</td><td>10€</td></tr>
+        <tr><td>Baffetti</td><td>8€</td></tr>
+        <tr><td>Mento</td><td>8€</td></tr>
+        <tr><td>Ascelle</td><td>12€</td></tr>
+        <tr><td>Braccia</td><td>15€</td></tr>
+        <tr><td>Inguine parziale</td><td>12€</td></tr>
+        <tr><td>Inguine completo</td><td>20€</td></tr>
+        <tr><td>Pancia/petto</td><td>15€</td></tr>
+        <tr><td>Schiena</td><td>20€</td></tr>
+        <tr><td>Mezza gamba</td><td>15€</td></tr>
+        <tr><td>Gamba intera</td><td>25€</td></tr>
+        <tr><td>Completa</td><td>40€</td></tr>
+    </table>
+
+    <!-- Extension e ciglia -->
+    <h3>Extension e ciglia</h3>
+    <table>
+        <tr><td>Extension ciglia one to one</td><td>50€</td></tr>
+        <tr><td>Extension ciglia volume russo</td><td>70€</td></tr>
+        <tr><td>Ritocco extension one to one</td><td>30€</td></tr>
+        <tr><td>Ritocco extension volume russo</td><td>45€</td></tr>
+        <tr><td>Laminazione ciglia</td><td>25€</td></tr>
+        <tr><td>Laminazione sopracciglia</td><td>25€</td></tr>
+        <tr><td>Rimozione ciglia</td><td>10€</td></tr>
+    </table>
+
+    <!-- Tatuaggi -->
+    <h3>Tatuaggi</h3>
+    <table>
+        <tr><td>Tatuaggio sopracciglia</td><td>150€</td></tr>
+        <tr><td>Tatuaggio labbra</td><td>180€</td></tr>
+        <tr><td>Tatuaggio infracigliare</td><td>80€</td></tr>
+    </table>
+
+    <!-- Trucco -->
+    <h3>Trucco</h3>
+    <table>
+        <tr><td>Prova trucco (concordare)</td><td>Da definire</td></tr>
+    </table>
+
+    <!-- Massaggi -->
+    <h3>Massaggi e bendaggi</h3>
+    <table>
+        <tr><td>Massaggio drenante gambe</td><td>30€</td></tr>
+        <tr><td>Massaggio schiena</td><td>25€</td></tr>
+        <tr><td>Massaggio rilassante 30 min</td><td>25€</td></tr>
+        <tr><td>Massaggio rilassante 40 min</td><td>35€</td></tr>
+        <tr><td>Bendaggio a freddo</td><td>20€</td></tr>
+    </table>
 </section>
 
 <section id="dove-mi-trovo">
@@ -55,6 +138,18 @@
 <footer>
     <p>© 2026 Artedielisa - Tutti i diritti riservati</p>
 </footer>
+
+<script>
+    // Scroll morbido menu
+    const menuLinks = document.querySelectorAll('nav.menu a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
 
 </body>
 </html>
