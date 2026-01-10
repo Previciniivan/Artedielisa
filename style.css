@@ -244,3 +244,37 @@ footer a {
 footer a:hover {
     color: #ffffff; /* diventa bianco quando passi sopra */
 }
+
+/* Sezione recensioni */
+#recensioni {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#recensioni h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.recensioni-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.recensione-card {
+    display: inline-block;
+    background-color: #1f3b5b;
+    color: #f2d7c6;
+    font-weight: bold;
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.recensione-card:hover {
+    background-color: #3f5f8f;
+    transform: translateY(-5px);
+}
