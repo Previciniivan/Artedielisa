@@ -13,11 +13,40 @@ body {
 
 /* HEADER */
 header {
+    top: 0;
+    background: linear-gradient(135deg, #1f3b5b, #3f5f8f);
+    color: white;
+    z-index: 1000;
+}
+/* Header normale */
+header.hero {
     background: linear-gradient(135deg, #1f3b5b, #3f5f8f);
     color: white;
     text-align: center;
     padding: 60px 20px;
 }
+
+/* MENU sticky */
+nav.menu {
+    position: sticky;
+    top: 0;
+    background-color: #1f3b5b;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Link menu */
+nav.menu a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav.menu a:hover {
+    text-decoration: underline;
+}
+
 
 .logo {
     width: 120px;
@@ -85,11 +114,7 @@ footer {
     font-size: 0.9rem;
 }
 
-
-/* Menu */
-nav.menu {
-    margin-top: 20px;
-}
+ 
 
 nav.menu a {
     margin: 0 15px;
@@ -122,4 +147,100 @@ table td:first-child {
 table td:last-child {
     text-align: right;
     font-weight: bold;
+}
+
+/* Galleria foto */
+.gallery {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.gallery h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Grid immagini */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+.menu a.active {
+    color: #f2d7c6;
+    border-bottom: 2px solid #f2d7c6;
+}
+
+
+.menu a {
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.menu a:hover {
+    color: #f2d7c6;
+}
+
+#contatti a:hover {
+    color: #1f3b5b;
+}
+
+/* Pulsante prenota */
+.btn-primary {
+    display: inline-block;
+    background-color: #f2d7c6;
+    color: #1f3b5b;
+    font-weight: bold;
+    padding: 12px 25px;
+    margin-top: 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #e0c2ab;
+    color: #122c45;
+}
+
+.chi-sono-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.chi-sono-wrapper img.chi-sono-img {
+    width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+footer a {
+    color: #f2d7c6; /* beige/rosa chiaro, leggibile sul blu scuro */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffffff; /* diventa bianco quando passi sopra */
 }
