@@ -264,17 +264,24 @@ footer a:hover {
 }
 
 .recensione-card {
-    display: inline-block;
+    display: flex; /* per centrare il testo */
+    align-items: center;
+    justify-content: center;
+    min-width: 200px; /* larghezza minima */
+    padding: 20px 30px;
     background-color: #1f3b5b;
     color: #f2d7c6;
     font-weight: bold;
-    padding: 20px 30px;
     border-radius: 12px;
     text-decoration: none;
     transition: background 0.3s, transform 0.3s;
+    text-align: center;
 }
+
 
 .recensione-card:hover {
     background-color: #3f5f8f;
     transform: translateY(-5px);
+    color: #fff;
 }
+
