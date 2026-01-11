@@ -7,22 +7,45 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.png" sizes="32x32">
     <link rel="icon" href="favicon.png" type="image/svg+xml">
+    
 </head>
 <body>
 
 <header class="hero">
+    <!-- HEADER DESKTOP -->
     <img src="logo.png" alt="Artedielisa logo" class="logo">
     <h1>Artedielisa</h1>
     <p>Benessere, bellezza e cura di te</p>
     <a href="https://wa.me/393487819352" class="btn-primary">Prenota ora</a>
+
+    <!-- HEADER MOBILE -->
+    <div class="mobile-header">
+        <button class="menu-toggle" aria-label="Apri menu" >☰</button>
+
+        <div class="mobile-logo">
+            <img src="logo.png" alt="Artedielisa logo">
+            <span>Artedielisa</span>
+        </div>
+
+        <a href="https://wa.me/393487819352" class="mobile-book">Prenota ora</a>
+    </div>
 </header>
 
+
+
+
 <nav class="menu">
-    <a href="index.html" class="active">Chi sono</a>
-    <a href="trattamenti.html">Trattamenti</a>
-    <a href="dove.html">Cabina</a>
-    <a href="contatti.html">Contattami</a>
+    <button class="menu-close">✕</button>
+
+    <div class="menu-links">
+        <a href="index.html">Chi sono</a>
+        <a href="trattamenti.html">Trattamenti</a>
+        <a href="dove.html">Lo studio</a>
+        <a href="contatti.html">Contattami</a>
+    </div>
 </nav>
+
+
 
 <section id="chi-sono" class="bg-light">
     <h2>Ciao, sono Elisa</h2>
@@ -78,6 +101,8 @@
     </p>
 </footer>
 
+<script src="script.js"></script>
 
 </body>
+
 </html>
