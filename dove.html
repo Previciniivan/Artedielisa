@@ -9,21 +9,37 @@
     <link rel="icon" href="favicon.png" type="image/svg+xml">
 </head>
 <body>
-
 <header class="hero">
+    <!-- HEADER DESKTOP -->
     <img src="logo.png" alt="Artedielisa logo" class="logo">
     <h1>Artedielisa</h1>
     <p>La cabina dove nasce il benessere</p>
     <a href="https://wa.me/393487819352" class="btn-primary">Prenota ora</a>
+
+    <!-- HEADER MOBILE -->
+    <div class="mobile-header">
+        <button class="menu-toggle" aria-label="Apri menu" >☰</button>
+
+        <div class="mobile-logo">
+            <img src="logo.png" alt="Artedielisa logo">
+            <span>Artedielisa</span>
+        </div>
+
+        <a href="https://wa.me/393487819352" class="mobile-book">Prenota ora</a>
+    </div>
 </header>
 
-<nav class="menu">
-    <a href="index.html">Chi sono</a>
-    <a href="trattamenti.html">Trattamenti</a>
-    <a href="dove.html" class="active">Cabina</a>
-    <a href="contatti.html">Contatti</a>
-</nav>
 
+<nav class="menu">
+    <button class="menu-close">✕</button>
+
+    <div class="menu-links">
+        <a href="index.html">Chi sono</a>
+        <a href="trattamenti.html">Trattamenti</a>
+        <a href="dove.html">Cabina</a>
+        <a href="contatti.html">Contattami</a>
+    </div>
+</nav>
 
 
 
@@ -67,6 +83,7 @@
 
 
 
+<script src="script.js"></script>
 
 </body>
 </html>
