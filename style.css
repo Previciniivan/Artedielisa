@@ -23,7 +23,7 @@ header.hero {
     background: linear-gradient(135deg, #1f3b5b, #3f5f8f);
     color: white;
     text-align: center;
-    padding: 60px 20px;
+    padding: 40px 20px;
 }
 
 /* MENU sticky */
@@ -264,24 +264,173 @@ footer a:hover {
 }
 
 .recensione-card {
-    display: flex; /* per centrare il testo */
-    align-items: center;
-    justify-content: center;
-    min-width: 200px; /* larghezza minima */
-    padding: 20px 30px;
+    display: inline-block;
     background-color: #1f3b5b;
     color: #f2d7c6;
     font-weight: bold;
+    padding: 20px 30px;
     border-radius: 12px;
     text-decoration: none;
     transition: background 0.3s, transform 0.3s;
-    text-align: center;
 }
-
 
 .recensione-card:hover {
     background-color: #3f5f8f;
     transform: translateY(-5px);
-    color: #fff;
 }
 
+/* ===== MENU DESKTOP ===== */
+nav.menu {
+    position: sticky;
+    top: 0;
+    background-color: #1f3b5b;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+.mobile-header {
+    display: none;
+}
+
+.menu-links a {
+    margin: 0 15px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-links a:hover {
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    color: white;
+}
+
+/* Toggle e X nascosti su desktop */
+.menu-toggle,
+.menu-close {
+    display: none;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 565px) {
+
+    /* Nascondo header desktop */
+    header.hero > img,
+    header.hero > h1,
+    header.hero > p,
+    header.hero > .btn-primary {
+        display: none;
+    }
+
+    /* HEADER MOBILE: sticky */
+    .mobile-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        height: 110px;
+        padding: 0 10px;
+        gap: 0;
+
+        position: fixed; /* meglio fixed su mobile per essere sicuro */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+
+        background: linear-gradient(135deg, #1f3b5b, #3f5f8f);
+    }
+
+    /* Ogni cella: centrare contenuto */
+    .mobile-header > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Hamburger a sinistra */
+    .menu-toggle {
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        justify-content: flex-start;
+    }
+
+    /* Logo centrale */
+    .mobile-logo {
+        flex-direction: column;
+        text-align: center;
+    }
+    .mobile-logo img {
+        width: 50px;
+        height: auto;
+        margin-bottom: 2px;
+    }
+    .mobile-logo span {
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    /* Bottone prenota a destra */
+    .mobile-book {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        border-radius: 18px;
+        background-color: #f2d7c6;
+        color: #1f3b5b;
+        text-decoration: none;
+    }
+
+
+    /* MENU FULLSCREEN */
+    nav.menu {
+        position: fixed;
+        inset: 0;
+        background-color: #1f3b5b;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    nav.menu.open {
+        display: flex;
+    }
+
+    .menu-links {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .menu-links a {
+        font-size: 1.8rem;
+        color: #f2d7c6;
+    }
+
+    /* X per chiudere menu */
+    .menu-close {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 2.5rem;
+        background: none;
+        border: none;
+        color: #f2d7c6;
+        cursor: pointer;
+        display: none;
+    }
+    nav.menu.open .menu-close {
+        display: block;
+    }
+
+    /* blocco scroll menu aperto */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
