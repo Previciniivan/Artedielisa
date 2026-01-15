@@ -497,6 +497,8 @@ table.orari td:last-child {
 }
 
 /* CHIUSO */
-table.orari td:last-child:contains("Chiuso") {
+table.orari .chiuso {
     color: #b04a4a;
+    font-weight: 700;
 }
+
