@@ -440,11 +440,18 @@ table.orari {
     max-width: 400px;
     margin: 20px auto;
     border-collapse: collapse;
+    background-color: #f0f2f5; /* grigino chiaro */
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 table.orari td {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    padding: 12px;
+    border-bottom: 1px solid #d0d4d9;
+}
+
+table.orari tr:last-child td {
+    border-bottom: none;
 }
 
 table.orari td:first-child {
@@ -455,3 +462,4 @@ table.orari td:first-child {
 table.orari td:last-child {
     text-align: right;
 }
+
