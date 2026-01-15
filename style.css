@@ -434,3 +434,24 @@ nav.menu {
         overflow: hidden;
     }
 }
+
+table.orari {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table.orari td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+table.orari td:first-child {
+    text-align: left;
+    font-weight: bold;
+}
+
+table.orari td:last-child {
+    text-align: right;
+}
