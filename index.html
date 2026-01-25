@@ -7,10 +7,10 @@
     <meta name="description" content="Centro estetico Artedielisa: bellezza, benessere e cura di te. Trattamenti professionali su appuntamento a Bubbiano MI.">
     <meta name="keywords" content="estetista, centro estetico, bellezza, trattamenti, Bubbiano, Bettola, Casorate primo, Rosate, Besate, Fallavecchia, Motta visconti">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/logo.ico" sizes="any">
-    <link rel="icon" href="/logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="/logo.png">
-    <link rel="shortcut icon" href="/logo.ico" type="image/x-icon">
+    <link rel="icon" href="logo.ico" sizes="any">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
     <link rel="canonical" href="https://artedielisa.it/">
 </head>
 <body>
@@ -37,59 +37,79 @@
 
 
 
+    <nav class="menu">
+        <button class="menu-close">✕</button>
 
-<nav class="menu">
-    <button class="menu-close">✕</button>
+        <div class="menu-links">
+            <a href="index.html" class="active">Chi sono</a>
+            <a href="trattamenti.html">Trattamenti</a>
+        <a href="galleria.html">Galleria</a>
+            <a href="dove.html">Cabina</a>
+            <a href="contatti.html">Contattami</a>
+        </div>
+    </nav>
 
-    <div class="menu-links">
-        <a href="index.html" class="active">Chi sono</a>
-        <a href="trattamenti.html">Trattamenti</a>
-        <a href="dove.html">Cabina</a>
-        <a href="contatti.html">Contattami</a>
+
+    <section id="chi-sono" class="bg-light">
+        <h2>Ciao, sono Elisa</h2>
+        <div class="chi-sono-wrapper">
+        <p>
+            Sono un’estetista professionista e appassionata di bellezza e benessere.  
+            Metto esperienza e attenzione in ogni trattamento per farti sentire unica,  
+            valorizzando la tua bellezza naturale.
+        </p>
+        <p>
+            Ricevo su appuntamento presso il mio studio:<br>
+            📍 <strong>Via Piazza 8 Marzo, 12, 20080 Bubbiano MI</strong><br>
+            <a href="https://maps.app.goo.gl/NoVr2aFVhgPyCJK17" target="_blank">Apri su Google Maps</a>
+        </p>
     </div>
-</nav>
 
-
-
-<section id="chi-sono" class="bg-light">
-    <h2>Ciao, sono Elisa</h2>
-    <div class="chi-sono-wrapper">
-    <p>
-        Sono un’estetista professionista e appassionata di bellezza e benessere.  
-        Metto esperienza e attenzione in ogni trattamento per farti sentire unica,  
-        valorizzando la tua bellezza naturale.
-    </p>
-    <p>
-        Ricevo su appuntamento presso il mio studio:<br>
-        📍 <strong>Via Piazza 8 Marzo, 12, 20080 Bubbiano MI</strong><br>
-        <a href="https://maps.app.goo.gl/NoVr2aFVhgPyCJK17" target="_blank">Apri su Google Maps</a>
-    </p>
+    </section>
+    <section class="gallery bg-light" id="statico">
+        <h2>I miei trattamenti</h2>
+        <div class="hero-slider">
+    <div class="slider-mask">
+        <img src="labbra.jpeg" class="slide active">
+        <img src="ciglia.jpeg" class="slide">
+        <img src="unghie.jpeg" class="slide">
+        <img src="sopracciglia.jpeg" class="slide">
+    </div>
+    <div class="hero-dots" id="heroDots"></div> <!-- <--- qui metti i pallini -->
 </div>
 
-</section>
-<section id="recensioni" class="bg-light">
-    <h2>Recensioni</h2>
-    <p>Scoprite cosa pensano le clienti e leggete le loro recensioni:</p><br>
-    <div class="recensioni-wrapper">
-        <a href="https://www.treatwell.it/salone/artedielisa/?utm_source=google&utm_medium=rwg&hl=it-IT&gei=J25iaaHcEP6_hbIPtMGJ-AU" target="_blank" class="recensione-card">
-            🌟 Treatwell
-        </a>
-        <a href="https://www.google.com/maps/place/Arte+di+Elisa/@45.328083,9.0166629,18z/data=!4m8!3m7!1s0x4786e7481fee30d9:0x1a8dc30bed8dc689!8m2!3d45.3278815!4d9.0175425!9m1!1b1!16s%2Fg%2F11wwm85r_x?authuser=0&entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="recensione-card">
-            🌟 Google Maps
-        </a>
-    </div>
-</section>
-
-
-<section id="contatti" class="bg-light">
-    <h2>Contattami</h2>
-    <p>
-        📞 Telefono: <a href="tel:+393487819352">+39 348 781 9352</a><br>
-        💬 WhatsApp: <a href="https://wa.me/393487819352" target="_blank">Inizia chat</a><br>
-        📸 Instagram: <a href="https://www.instagram.com/artedielisaofficial/" target="_blank">artedielisaofficial</a><br>
-        📧 Email: <a href="mailto:artedielisa02@gmail.com">artedielisa02@gmail.com</a>
-    </p>
-</section>
+        <div class="gallery-grid">
+            <img src="labbra.jpeg" alt="Trattamento labbra">
+            <img src="ciglia.jpeg" alt="Trattamento ciglia">
+            <img src="unghie.jpeg" alt="Trattamento unghie">
+            <img src="sopracciglia.jpeg" alt="Trattamento sopracciglia">
+        </div><br class="statico"><br class="statico">
+        <center>
+        <a href="galleria.html" target="_blank" class="recensione-card">
+            Clicca qui per guarda la galleria dei miei trattamenti
+        </a></center>
+    </section>
+    <section id="recensioni" class="bg-light">
+        <h2>Recensioni</h2>
+        <p>Scoprite cosa pensano le clienti e leggete le loro recensioni:</p><br>
+        <div class="recensioni-wrapper">
+            <a href="https://www.treatwell.it/salone/artedielisa/?utm_source=google&utm_medium=rwg&hl=it-IT&gei=J25iaaHcEP6_hbIPtMGJ-AU" target="_blank" class="recensione-card">
+                🌟 Treatwell
+            </a>
+            <a href="https://www.google.com/maps/place/Arte+di+Elisa/@45.328083,9.0166629,18z/data=!4m8!3m7!1s0x4786e7481fee30d9:0x1a8dc30bed8dc689!8m2!3d45.3278815!4d9.0175425!9m1!1b1!16s%2Fg%2F11wwm85r_x?authuser=0&entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="recensione-card">
+                🌟 Google Maps
+            </a>
+        </div>
+    </section>
+    <section id="contatti" class="bg-light">
+        <h2>Contattami</h2>
+        <p>
+            📞 Telefono: <a href="tel:+393487819352">+39 348 781 9352</a><br>
+            💬 WhatsApp: <a href="https://wa.me/393487819352" target="_blank">Inizia chat</a><br>
+            📸 Instagram: <a href="https://www.instagram.com/artedielisaofficial/" target="_blank">artedielisaofficial</a><br>
+            📧 Email: <a href="mailto:artedielisa02@gmail.com">artedielisa02@gmail.com</a>
+        </p>
+    </section>
 
 <footer>
     <p>© 2026 Artedielisa - Tutti i diritti riservati</p>
@@ -105,7 +125,7 @@
 </footer>
 
 <script src="script.js"></script>
-
+<script src="slider.js"></script>
 </body>
 
 </html>
