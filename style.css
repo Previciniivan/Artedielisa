@@ -65,8 +65,8 @@ header p {
 /* SEZIONI */
 section {
     padding: 60px 20px;
-    max-width: 900px;
-    margin: auto;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 section h2 {
@@ -103,6 +103,7 @@ a:hover {
 /* SFONDO CHIARO */
 .bg-light {
     background-color: #f7f7f7;
+    width: 100%;
 }
 
 /* FOOTER */
@@ -313,9 +314,30 @@ nav.menu {
 .menu-close {
     display: none;
 }
+.hero-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
 
+.hero-dots span {
+    width: 10px;
+    height: 10px;
+    background: #cfd6dd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.hero-dots span.active {
+    background: #1f3b5b;
+}
+
+.hero-slider {
+    display: none;
+}
 /* ===== MOBILE ===== */
-@media (max-width: 565px) {
+@media (max-width: 690px) {
 
     /* Nascondo header desktop */
     header.hero > img,
@@ -433,7 +455,20 @@ nav.menu {
     body.menu-open {
         overflow: hidden;
     }
+    .hero-slider{
+        display:block;
+    }
+    .gallery-grid{
+        display: none;
+    }
+    .statico{
+        display: none;
+    }
+
 }
+
+
+
 
 /* ===== ORARI – VERSIONE BELLA ===== */
 
@@ -500,5 +535,171 @@ table.orari td:last-child {
 table.orari .chiuso {
     color: #b04a4a;
     font-weight: 700;
+}
+
+/* ===== HERO SLIDER ===== */
+
+.hero-slider {
+    width: 225px;
+    height: 250px;
+    aspect-ratio: 4 / 3;
+    margin: 60px auto;
+    
+}
+
+.slider-mask {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+
+    
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.35),
+        rgba(255,255,255,0.1)
+    );
+
+    backdrop-filter: blur(6px);
+}
+
+
+
+
+.hero-slider .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 16px; /* 👈 FORZA */
+    will-change: transform, opacity; /* 👈 GPU felice */
+
+    transform: translateX(100%) rotate(3deg) scale(0.95);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+
+.hero-slider .slide.active {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg) scale(1);
+    z-index: 2;
+}
+
+.hero-slider .slide.exit {
+    opacity: 1;
+    transform: translateX(-100%) rotate(-4deg) scale(0.9);
+    z-index: 1;
+}
+
+
+
+/* ===== GALLERIA SLIDER ===== */
+
+.gallery-section {
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.2rem;
+}
+
+.gallery-section p {
+    color: #5f6f82;
+    margin-bottom: 30px;
+}
+
+.gallery-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery-track img {
+    min-width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+/* Frecce */
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.85);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.gallery-arrow.left { left: 15px; }
+.gallery-arrow.right { right: 15px; }
+
+/* Pallini */
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.gallery-dots span {
+    width: 10px;
+    height: 10px;
+    background: #cfd6dd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.gallery-dots span.active {
+    background: #1f3b5b;
+}
+
+/* ===== GALLERIA SOLO MOBILE ===== */
+
+/* Desktop: slider spento */
+.gallery-slider,
+.gallery-dots {
+    display: none;
+}
+
+/* Mobile: slider acceso */
+@media (max-width: 690px) {
+    .gallery-slider,
+    .gallery-dots {
+        display: block;
+    }
+    .gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.gallery-dots span {
+    width: 10px;
+    height: 10px;
+    background: #cfd6dd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.gallery-dots span.active {
+    background: #1f3b5b;
+}
 }
 
