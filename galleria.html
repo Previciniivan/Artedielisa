@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artedielisa - Centro Estetico a Bubbiano</title>
+    <meta name="description" content="Centro estetico Artedielisa: bellezza, benessere e cura di te. Trattamenti professionali su appuntamento a Bubbiano MI.">
+    <meta name="keywords" content="estetista, centro estetico, bellezza, trattamenti, Bubbiano, Bettola, Casorate primo, Rosate, Besate, Fallavecchia, Motta visconti">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.ico" sizes="any">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <link rel="canonical" href="https://artedielisa.it/">
+</head>
+<body>
+
+<header class="hero">
+    <!-- HEADER DESKTOP -->
+    <img src="logo.avif" alt="Artedielisa logo" class="logo">
+    <h1>Artedielisa</h1>
+    <p>Benessere, bellezza e cura di te</p>
+    <a href="https://wa.me/393487819352" class="btn-primary">Prenota ora</a>
+
+    <!-- HEADER MOBILE -->
+    <div class="mobile-header">
+        <button class="menu-toggle" aria-label="Apri menu" >☰</button>
+
+        <div class="mobile-logo">
+            <img src="logo.avif" alt="Artedielisa logo">
+            <span>Artedielisa</span>
+        </div>
+
+        <a href="https://wa.me/393487819352" class="mobile-book">Prenota ora</a>
+    </div>
+</header>
+
+
+
+    <nav class="menu">
+        <button class="menu-close">✕</button>
+
+        <div class="menu-links">
+            <a href="index.html">Chi sono</a>
+            <a href="trattamenti.html">Trattamenti</a>
+        <a href="galleria.html" class="active">Galleria</a>
+            <a href="dove.html">Cabina</a>
+            <a href="contatti.html">Contattami</a>
+        </div>
+    </nav>
+
+
+    <section class="gallery-section bg-light">
+    <h2>I miei trattamenti</h2>
+    <p>Immagini dei trattamenti finiti</p>
+
+    <div class="gallery-grid">
+        <img src="ciglia.jpeg" alt="">
+        <img src="unghie.jpeg" alt="">
+        <img src="sopracciglia.jpeg" alt="">
+        <img src="labbra.jpeg" alt="">
+    </div>
+    <!-- SLIDER MOBILE -->
+    <div class="gallery-slider statico">
+        <button class="gallery-arrow left" onclick="prevGallery()">❮</button>
+
+        <div class="gallery-track" id="galleryTrack">
+            <img src="ciglia.jpeg" alt="">
+            <img src="unghie.jpeg" alt="">
+            <img src="sopracciglia.jpeg" alt="">
+            <img src="labbra.jpeg" alt="">
+        </div>
+
+        <button class="gallery-arrow right" onclick="nextGallery()">❯</button>
+    </div>
+
+    <div class="gallery-dots" id="galleryDots"></div>
+</section>
+
+
+
+<footer>
+    <p>© 2026 Artedielisa - Tutti i diritti riservati</p>
+    <p>
+        Indirizzo: Via Piazza 8 Marzo, 12, 20080 Bubbiano MI<br>
+        Telefono: <a href="tel:+393487819352">+39 348 781 9352</a> | WhatsApp: <a href="https://wa.me/393487819352" target="_blank">Inizia chat</a><br>
+        Instagram: <a href="https://www.instagram.com/artedielisaofficial/" target="_blank">artedielisaofficial</a> | Email: <a href="mailto:artedielisa02@gmail.com">artedielisa02@gmail.com</a><br>
+        P.IVA: 13683820966
+    </p>
+    <p>
+        Questo sito non utilizza cookie di profilazione. Eventuali cookie di terze parti sono utilizzati solo cliccando su link esterni.
+    </p>
+</footer>
+<script src="galleria.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
