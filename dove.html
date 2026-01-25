@@ -36,6 +36,7 @@
     <div class="menu-links">
         <a href="index.html">Chi sono</a>
         <a href="trattamenti.html">Trattamenti</a>
+        <a href="galleria.html">Galleria</a>
         <a href="dove.html" class="active">Cabina</a>
         <a href="contatti.html">Contattami</a>
     </div>
@@ -43,7 +44,7 @@
 
 
 
-<section id="dove-mi-trovo">
+<section id="dove-mi-trovo" class="bg-light">
     <h2>Dove mi trovo</h2>
     <p>
         Ricevo su appuntamento presso il mio studio:<br>
@@ -53,7 +54,7 @@
 </section>
 
 
-<section class="gallery">
+<section class="gallery bg-light">
     <h2>Lo studio</h2>
 
     <div class="gallery-grid">
@@ -62,12 +63,25 @@
         <img src="studio3.jpg" alt="Dettaglio ambiente">
         <img src="studio4.jpg" alt="Centro estetico Artedielisa">
     </div>
-</section>
+<div class="gallery-slider statico">
+        <button class="gallery-arrow left" onclick="prevGallery()">❮</button>
 
+        <div class="gallery-track" id="galleryTrack">
+            <img src="studio1.jpg" alt="Cabina estetica Artedielisa">
+        <img src="studio2.jpg" alt="Postazione manicure">
+        <img src="studio3.jpg" alt="Dettaglio ambiente">
+        <img src="studio4.jpg" alt="Centro estetico Artedielisa">
+        </div>
+
+        <button class="gallery-arrow right" onclick="nextGallery()">❯</button>
+    </div>
+
+    <div class="gallery-dots" id="galleryDots"></div>
 
 
 <br><br><br>
 
+</section>
 <footer>
     <p>© 2026 Artedielisa - Tutti i diritti riservati</p>
     <p>
@@ -77,15 +91,13 @@
         P.IVA: 13683820966
     </p>
     <p>
-        Questo sito non utilizza cookie di profilazione. Eventuali cookie di terze parti sono utilizzati solo cliccando su link esterni.
+        Questo sito non utilizza cookie di profilazione. Eventuali cookie di terze parti sono utilizzati solo cliccando su link esterni (Google Maps, Instagram).
     </p>
 </footer>
 
 
 
 <script src="script.js"></script>
-
+<script src="galleria.js"></script>
 </body>
 </html>
-
-
