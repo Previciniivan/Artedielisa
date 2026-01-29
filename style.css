@@ -273,7 +273,7 @@ table td:last-child {
 }
 
 .gallery-grid img {
-    width: 100%;
+    width: 220px;
     height: 250px;
     object-fit: cover;
     border-radius: 12px;
@@ -642,7 +642,7 @@ table.orari .chiuso {
 /* ===== HERO SLIDER ===== */
 
 .hero-slider {
-    width: 225px;
+    width: 220px;
     height: 250px;
     aspect-ratio: 4 / 3;
     margin: 60px auto;
@@ -716,7 +716,8 @@ table.orari .chiuso {
 
 .gallery-slider {
     position: relative;
-    max-width: 900px;
+    width: 300px;
+    height: 420px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 22px;
@@ -728,7 +729,7 @@ table.orari .chiuso {
 }
 
 .gallery-track img {
-    min-width: 100%;
+    width: 300px;
     height: 420px;
     object-fit: cover;
 }
