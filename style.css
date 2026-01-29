@@ -106,15 +106,113 @@ a:hover {
     width: 100%;
 }
 
-/* FOOTER */
+/* FOOTER GENERALE */
 footer {
     background-color: #1f3b5b;
     color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
+    padding: 40px 20px 20px 20px;
+    font-size: 0.95rem;
 }
 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #f2d7c6;
+}
+
+.footer-section p {
+    line-height: 1.6;
+}
+
+.footer-section a {
+    color: #f2d7c6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-section a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+}
+
+/* MOBILE */
+@media (max-width: 851px) {
+     .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        max-height: 100%;
+        flex: none;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    /* Riga separatrice sotto ogni sezione tranne l'ultima */
+    .footer-section:not(:last-child)::after {
+        content: "";
+        display: block;
+        width: 60%;
+        height: 1px;
+        background-color: rgba(255,255,255,0.3);
+        margin: 15px auto 0 auto;
+    }
+    .footer-container{
+        gap: 0;
+    }
+
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* LINEE VERTICALI tra colonne su PC */
+@media (min-width: 852px) {
+    .footer-section {
+        position: relative;
+        padding: 0 20px;
+    }
+
+    /* aggiunge la linea verticale a destra di ogni sezione tranne l'ultima */
+    .footer-section:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 100%;
+        background-color: rgba(255,255,255,0.3);
+    }
+    
+}
  
 
 nav.menu a {
@@ -703,3 +801,73 @@ table.orari .chiuso {
 }
 }
 
+/* ===== PRIVACY / COOKIE POLICY ===== */
+
+.policy {
+    padding: 80px 20px;
+}
+
+.policy h2 {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+    color: #1f3b5b;
+}
+
+.policy h3 {
+    margin-top: 35px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #3f5f8f;
+}
+
+.policy p,
+.policy ul {
+    max-width: 720px;
+    margin: 0 auto 15px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: left;
+    color: #2a3e55;
+}
+
+.policy ul {
+    padding-left: 20px;
+}
+
+.policy ul li {
+    margin: 6px 0;
+}
+
+/* CARD ELEGANTE */
+.policy {
+    background: linear-gradient(
+        to bottom,
+        #f7f7f7 0%,
+        #ffffff 100%
+    );
+}
+
+.policy > * {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+/* Titolo senza card */
+.policy h2 {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* Link più soft */
+.policy a {
+    color: #3f5f8f;
+    font-weight: 600;
+}
+
+.policy a:hover {
+    color: #1f3b5b;
+}
