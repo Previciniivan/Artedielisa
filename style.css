@@ -10,6 +10,10 @@ body {
     color: #1f3b5b;
     line-height: 1.6;
 }
+.icon {
+    vertical-align: middle;
+    margin-right: 6px;
+}
 
 /* HEADER */
 header {
