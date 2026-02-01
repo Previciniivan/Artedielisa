@@ -1,35 +1,46 @@
+const galleries = {};
 
-let gIndex = 0;
-const track = document.getElementById("galleryTrack");
-const dotsBox = document.getElementById("galleryDots");
-const slides = track.children.length;
+function initGallery(name) {
+  const track = document.getElementById(`track-${name}`);
+  const dotsBox = document.getElementById(`dots-${name}`);
+  const slides = track.children.length;
 
-for (let i = 0; i < slides; i++) {
+  galleries[name] = { index: 0, slides, track, dotsBox };
+
+  for (let i = 0; i < slides; i++) {
     const dot = document.createElement("span");
-    dot.onclick = () => goGallery(i);
+    dot.onclick = () => goGallery(name, i);
     if (i === 0) dot.classList.add("active");
     dotsBox.appendChild(dot);
+  }
 }
 
-function updateGallery() {
-    track.style.transform = `translateX(-${gIndex * 100}%)`;
-    [...dotsBox.children].forEach((d, i) =>
-        d.classList.toggle("active", i === gIndex)
-    );
+function updateGallery(name) {
+  const g = galleries[name];
+  g.track.style.transform = `translateX(-${g.index * 100}%)`;
+  [...g.dotsBox.children].forEach((d, i) =>
+    d.classList.toggle("active", i === g.index)
+  );
 }
 
-function nextGallery() {
-    gIndex = (gIndex + 1) % slides;
-    updateGallery();
+function nextGallery(name) {
+  const g = galleries[name];
+  g.index = (g.index + 1) % g.slides;
+  updateGallery(name);
 }
 
-function prevGallery() {
-    gIndex = (gIndex - 1 + slides) % slides;
-    updateGallery();
+function prevGallery(name) {
+  const g = galleries[name];
+  g.index = (g.index - 1 + g.slides) % g.slides;
+  updateGallery(name);
 }
 
-function goGallery(i) {
-    gIndex = i;
-    updateGallery();
+function goGallery(name, i) {
+  galleries[name].index = i;
+  updateGallery(name);
 }
 
+// INIT
+initGallery("mani");
+initGallery("ciglia");
+initGallery("tatuaggi");
