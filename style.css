@@ -876,3 +876,13 @@ table.orari .chiuso {
 .policy a:hover {
     color: #1f3b5b;
 }
+
+.mappa{
+    border: 4px solid black;
+    border-radius: 50px;
+    transition: all 0.3s linear;
+}
+
+.mappa:hover{
+    box-shadow: 1px 1px 2px black, 0 0 25px #1f3b5b, 0 0 5px #3f5f8f;
+}
