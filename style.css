@@ -886,3 +886,9 @@ table.orari .chiuso {
 .mappa:hover{
     box-shadow: 1px 1px 2px black, 0 0 25px #1f3b5b, 0 0 5px #3f5f8f;
 }
+
+
+
+table.orari td:last-child.chiuso {
+    color: #c0392b;
+}
