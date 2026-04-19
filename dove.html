@@ -1,141 +1,135 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dove si trova Artedielisa – Centro Estetico a Bubbiano</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.png" sizes="32x32">
-    <link rel="icon" href="favicon.png" type="image/svg+xml">
-    <link rel="canonical" href="https://www.artedielisa.it/dove.html">
-    <meta name="description" content="Scopri dove si trova il centro estetico Artedielisa a Bubbiano (MI). Indirizzo, mappa e indicazioni per raggiungere lo studio. Trattamenti estetici su appuntamento per viso, corpo e unghie.">
-</head>
-<body>
-<header class="hero">
-    <!-- HEADER DESKTOP -->
-    <img src="logo.png" alt="Artedielisa logo" class="logo">
-    <h1>Artedielisa</h1>
-    <p>La cabina dove nasce il benessere</p>
-    <a href="https://wa.me/393487819352" class="btn-primary">Prenota ora</a>
-
-    <!-- HEADER MOBILE -->
-    <div class="mobile-header">
-        <button class="menu-toggle" aria-label="Apri menu" >☰</button>
-
-        <div class="mobile-logo">
-            <img src="logo.png" alt="Artedielisa logo">
-            <span>Artedielisa</span>
-        </div>
-
-        <a href="https://wa.me/393487819352" class="mobile-book">Prenota ora</a>
-    </div>
-</header>
-<main>
-    <nav class="menu">
-        <button class="menu-close">✕</button>
-    
-        <div class="menu-links">
-            <a href="https://www.artedielisa.it/">Chi sono</a>
-            <a href="trattamenti.html">Trattamenti</a>
-            <a href="galleria.html">Galleria</a>
-            <a href="dove.html" class="active">Cabina</a>
-            <a href="contatti.html">Contattami</a>
-        </div>
-    </nav>
-    <section id="dove-mi-trovo" class="bg-light">
-        <h2>Dove si trova il centro estetico Artedielisa a Bubbiano</h2>
-        <div class="chi-sono-wrapper">
-            <p>
-                Il centro estetico <strong>Artedielisa</strong> si trova a <strong>Bubbiano (MI)</strong> ed è facilmente raggiungibile dalle zone limitrofe come Rosate, Casorate Primo, Motta Visconti e Gaggiano.
-            </p>
-            <p>
-                Ricevo esclusivamente su appuntamento in un ambiente riservato e curato, dedicato a trattamenti estetici professionali per viso, corpo e unghie.
-            </p>
-            <p>
-                Di seguito trovi la posizione esatta dello studio:
-            </p>
-            <iframe 
-                class="mappa" style="margin-top: 10px;"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.080908798414!2d9.014552184147844!3d45.326988617245696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786e7481fee30d9%3A0x1a8dc30bed8dc689!2sArte%20di%20Elisa!5e0!3m2!1sit!2sit!4v1770144140567!5m2!1sit!2sit"
-                width="660"
-                loading="lazy"
-                title="Mappa Artedielisa"
-                height="300"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            <p>
-                📍 <a href="https://maps.app.goo.gl/NoVr2aFVhgPyCJK17" target="_blank"><strong>Indirizzo:</strong> Via Piazza 8 Marzo, 12, 20080 Bubbiano (MI)</a><br>
-                🚗 Parcheggio disponibile nelle vicinanze<br>
-                📲 Per informazioni o appuntamenti puoi contattarmi direttamente su WhatsApp <br>
-                <a href="https://maps.app.goo.gl/NoVr2aFVhgPyCJK17" target="_blank">
-                    Apri la posizione su Google Maps
-                </a>
-            </p>
-        </div>
-    </section>
-    <section class="gallery bg-light">
-        <h2>Lo studio</h2>
-        <div class="gallery-grid">
-            <img src="studio1.jpg" alt="Cabina estetica Artedielisa">
-            <img src="studio2.jpg" alt="Postazione manicure">
-            <img src="studio3.jpg" alt="Dettaglio ambiente">
-            <img src="studio4.jpg" alt="Centro estetico Artedielisa">
-        </div>
-    <div class="gallery-slider statico">
-            <button class="gallery-arrow left" onclick="prevGallery()">❮</button>
-            <div class="gallery-track" id="galleryTrack">
-            <img src="studio1.jpg" alt="Cabina estetica Artedielisa" fetchpriority="high">
-            <img src="studio2.jpg" alt="Postazione manicure" loading="lazy">
-            <img src="studio3.jpg" alt="Dettaglio ambiente" loading="lazy">
-            <img src="studio4.jpg" alt="Centro estetico Artedielisa" loading="lazy">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dove si trova Artedielisa – Centro Estetico a Bubbiano</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="favicon.png" sizes="32x32">
+        <link rel="icon" href="favicon.png" type="image/svg+xml">
+        <link rel="canonical" href="https://www.artedielisa.it/dove.html">
+        <meta name="description" content="Scopri dove si trova il centro estetico Artedielisa a Bubbiano (MI). Indirizzo, mappa e indicazioni per raggiungere lo studio. Trattamenti estetici su appuntamento per viso, corpo e unghie.">
+    </head>
+    <body>
+    <header class="hero">
+        <img src="logo.png" alt="Artedielisa logo" class="logo" width="120" height="120">
+        <h1>Artedielisa</h1>
+        <p>La cabina dove nasce il benessere</p>
+        <a href="https://wa.me/393487819352" class="btn-primary">Prenota ora</a>
+        <div class="mobile-header">
+            <button class="menu-toggle" aria-label="Apri menu" >☰</button>
+            <div class="mobile-logo">
+                <img src="logo.png" alt="Artedielisa logo" width="50" height="50">
+                <span>Artedielisa</span>
             </div>
-            <button class="gallery-arrow right" onclick="nextGallery()">❯</button>
+            <a href="https://wa.me/393487819352" class="mobile-book">Prenota ora</a>
         </div>
-        <div class="gallery-dots" id="galleryDots"></div>
-    <br><br><br>
-    </section>
-</main>
-<footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h4>Contatti</h4>
-            <p>
-                Indirizzo: <a href="https://maps.app.goo.gl/NoVr2aFVhgPyCJK17" target="_blank">Via Piazza 8 Marzo, 12, 20080 Bubbiano MI</a><br>
-                Telefono: <a href="tel:+393487819352">+39 348 781 9352</a><br>
-                WhatsApp: <a href="https://wa.me/393487819352">Inizia chat</a><br>
-                Email: <a href="mailto:artedielisa02@gmail.com">artedielisa02@gmail.com</a><br>
-                Instagram: <a href="https://www.instagram.com/artedielisaofficial/">artedielisaofficial</a>
-            </p>
+    </header>
+    <main>
+        <nav class="menu">
+            <button class="menu-close">✕</button>
+            <div class="menu-links">
+                <a href="https://www.artedielisa.it/">Chi sono</a>
+                <a href="trattamenti.html">Trattamenti</a>
+                <a href="galleria.html">Galleria</a>
+                <a href="dove.html" class="active">Cabina</a>
+                <a href="contatti.html">Contattami</a>
+            </div>
+        </nav>
+        <section id="dove-mi-trovo" class="bg-light">
+            <h2>Dove si trova il centro estetico Artedielisa a Bubbiano</h2>
+            <div class="chi-sono-wrapper">
+                <p>
+                    Il centro estetico <strong>Artedielisa</strong> si trova a <strong>Bubbiano (MI)</strong> ed è facilmente raggiungibile dalle zone limitrofe come Rosate, Casorate Primo, Motta Visconti e Gaggiano.
+                </p>
+                <p>
+                    Ricevo esclusivamente su appuntamento in un ambiente riservato e curato, dedicato a trattamenti estetici professionali per viso, corpo e unghie.
+                </p>
+                <p>
+                    Di seguito trovi la posizione esatta dello studio:
+                </p>
+                <iframe 
+                    class="mappa" style="margin-top: 10px;"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.080908798414!2d9.014552184147844!3d45.326988617245696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786e7481fee30d9%3A0x1a8dc30bed8dc689!2sArte%20di%20Elisa!5e0!3m2!1sit!2sit!4v1770144140567!5m2!1sit!2sit"
+                    width="660"
+                    loading="lazy"
+                    title="Mappa Artedielisa"
+                    height="300"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <p>
+                    📍 <a href="https://maps.app.goo.gl/NoVr2aFVhgPyCJK17" target="_blank"><strong>Indirizzo:</strong> Via Piazza 8 Marzo, 12, 20080 Bubbiano (MI)</a><br>
+                    🚗 Parcheggio disponibile nelle vicinanze<br>
+                    📲 Per informazioni o appuntamenti puoi contattarmi direttamente su WhatsApp <br>
+                    <a href="https://maps.app.goo.gl/NoVr2aFVhgPyCJK17" target="_blank">
+                        Apri la posizione su Google Maps
+                    </a>
+                </p>
+            </div>
+        </section>
+        <section class="gallery bg-light">
+            <h2>Lo studio</h2>
+            <div class="gallery-grid">
+                <img src="studio1.jpg" alt="Cabina estetica Artedielisa">
+                <img src="studio2.jpg" alt="Postazione manicure">
+                <img src="studio3.jpg" alt="Dettaglio ambiente">
+                <img src="studio4.jpg" alt="Centro estetico Artedielisa">
+            </div>
+        <div class="gallery-slider statico">
+                <button class="gallery-arrow left" onclick="prevGallery()">❮</button>
+                <div class="gallery-track" id="galleryTrack">
+                <img src="studio1.jpg" alt="Cabina estetica Artedielisa" fetchpriority="high">
+                <img src="studio2.jpg" alt="Postazione manicure" loading="lazy">
+                <img src="studio3.jpg" alt="Dettaglio ambiente" loading="lazy">
+                <img src="studio4.jpg" alt="Centro estetico Artedielisa" loading="lazy">
+                </div>
+                <button class="gallery-arrow right" onclick="nextGallery()">❯</button>
+            </div>
+            <div class="gallery-dots" id="galleryDots"></div>
+        <br><br><br>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Contatti</h4>
+                <p>
+                    Indirizzo: <a href="https://maps.app.goo.gl/NoVr2aFVhgPyCJK17" target="_blank">Via Piazza 8 Marzo, 12, 20080 Bubbiano MI</a><br>
+                    Telefono: <a href="tel:+393487819352">+39 348 781 9352</a><br>
+                    WhatsApp: <a href="https://wa.me/393487819352">Inizia chat</a><br>
+                    Email: <a href="mailto:artedielisa02@gmail.com">artedielisa02@gmail.com</a><br>
+                    Instagram: <a href="https://www.instagram.com/artedielisaofficial/">artedielisaofficial</a>
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Info Legali</h4>
+                <p>
+                    P.IVA: 13683820966<br>
+                    <a href="cookie.html">Cookie Policy</a> | <a href="privacy.html">Privacy Policy</a>
+                </p>
+                <p>
+                    Questo sito non utilizza cookie di profilazione. Eventuali cookie di terze parti sono utilizzati solo cliccando su link esterni.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Pagine</h4>
+                <p>
+                    Homepage: <a href="index.html">Chi sono</a><br>
+                    Scopri i trattamenti: <a href="trattamenti.html">Trattamenti</a><br>
+                    Guarda i risultati: <a href="galleria.html">Galleria</a><br>
+                    Dove mi trovo: <a href="dove.html">Cabina</a><br>
+                    Prenota l'appuntamento: <a href="contatti.html">Contattami</a>
+                </p>
+            </div>
         </div>
-        <div class="footer-section">
-            <h4>Info Legali</h4>
-            <p>
-                P.IVA: 13683820966<br>
-                <a href="cookie.html">Cookie Policy</a> | <a href="privacy.html">Privacy Policy</a>
-            </p>
-            <p>
-                Questo sito non utilizza cookie di profilazione. Eventuali cookie di terze parti sono utilizzati solo cliccando su link esterni.
-            </p>
+        <div class="footer-bottom">
+            <p>© 2026 Artedielisa - Tutti i diritti riservati | Icons by <a href="https://icons8.com/">Icons8</a></p>
         </div>
-        <div class="footer-section">
-            <h4>Pagine</h4>
-            <p>
-                Homepage: <a href="index.html">Chi sono</a><br>
-                Scopri i trattamenti: <a href="trattamenti.html">Trattamenti</a><br>
-                Guarda i risultati: <a href="galleria.html">Galleria</a><br>
-                Dove mi trovo: <a href="dove.html">Cabina</a><br>
-                Prenota l'appuntamento: <a href="contatti.html">Contattami</a>
-            </p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2026 Artedielisa - Tutti i diritti riservati | Icons by <a href="https://icons8.com/">Icons8</a></p>
-    </div>
-</footer>
-<script src="cabina.js" defer></script>
-<script src="script.js" defer></script>
-</body>
+    </footer>
+    <script src="cabina.js" defer></script>
+    <script src="script.js" defer></script>
+    </body>
 </html>
 
 
