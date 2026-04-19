@@ -1,202 +1,171 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foto trattamenti di Artedielisa - Centro Estetico a Bubbiano</title>
-    <meta name="description" content="Centro estetico Artedielisa: bellezza, benessere e cura di te. Trattamenti professionali su appuntamento a Bubbiano MI.">
-    <meta name="keywords" content="estetista, centro estetico, bellezza, trattamenti, Bubbiano, Bettola, Casorate primo, Rosate, Besate, Fallavecchia, Motta visconti">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.ico" sizes="any">
-    <link rel="icon" href="logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="logo.png">
-    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
-    <link rel="canonical" href="https://www.artedielisa.it/galleria.html">
-</head>
-<body>
-
-<header class="hero">
-    <!-- HEADER DESKTOP -->
-    <img src="logo.avif" alt="Artedielisa logo" class="logo">
-    <h1>Artedielisa</h1>
-    <p>Benessere, bellezza e cura di te</p>
-    <a href="https://wa.me/393487819352" class="btn-primary">Prenota ora</a>
-
-    <!-- HEADER MOBILE -->
-    <div class="mobile-header">
-        <button class="menu-toggle" aria-label="Apri menu" >☰</button>
-
-        <div class="mobile-logo">
-            <img src="logo.avif" alt="Artedielisa logo">
-            <span>Artedielisa</span>
-        </div>
-
-        <a href="https://wa.me/393487819352" class="mobile-book">Prenota ora</a>
-    </div>
-</header>
-
-
-
-    <nav class="menu">
-        <button class="menu-close">✕</button>
-
-        <div class="menu-links">
-            <a href="https://www.artedielisa.it/">Chi sono</a>
-            <a href="trattamenti.html">Trattamenti</a>
-            <a href="galleria.html" class="active">Galleria</a>
-            <a href="dove.html">Cabina</a>
-            <a href="contatti.html">Contattami</a>
-        </div>
-    </nav>
-
-
-<section class="gallery-section bg-light">
-    <h2>I miei trattamenti</h2>
-    <p>
-Questa galleria raccoglie alcuni esempi reali dei trattamenti estetici eseguiti presso il centro Artedielisa a Bubbiano. 
-Ogni immagine mostra risultati autentici di servizi come manicure, extension ciglia e trattamenti estetici personalizzati, 
-realizzati con attenzione ai dettagli e alla qualità.
-</p>
-
-<p>
-Sfoglia le foto per scoprire il risultato finale dei trattamenti e trovare ispirazione. 
-Per maggiori informazioni o per prenotare un appuntamento, visita la pagina dei 
-<a href="trattamenti.html">trattamenti</a> oppure vai alla sezione 
-<a href="contatti.html">contatti</a>.
-</p>
-
-    <h3>Manicure</h3><br>
-    <div class="gallery-grid">
-        <img src="unghie.webp" alt="unghie">
-        <img src="unghie2.webp" alt="unghie2">
-        <img src="unghie3.webp" alt="unghie3">
-        <img src="unghie4.webp" alt="unghie4">
-        <img src="unghie5.webp" alt="unghie5">
-        <img src="unghie6.webp" alt="unghie6">
-        <img src="unghie7.webp" alt="unghie7">
-        <img src="unghie8.webp" alt="unghie8">
-    </div>
-
-    <div class="gallery-slider">
-        <button class="gallery-arrow left" onclick="prevGallery('mani')">❮</button>
-        <div class="gallery-track" id="track-mani">
-            <img src="unghie.webp" alt="unghie" fetchpriority="high">
-            <img src="unghie2.webp" alt="unghie2" loading="lazy">
-            <img src="unghie3.webp" alt="unghie3" loading="lazy">
-            <img src="unghie4.webp" alt="unghie4" loading="lazy">
-            <img src="unghie5.webp" alt="unghie5" loading="lazy">
-            <img src="unghie6.webp" alt="unghie6" loading="lazy">
-            <img src="unghie7.webp" alt="unghie7" loading="lazy">
-            <img src="unghie8.webp" alt="unghie8" loading="lazy">
-        </div>
-        <button class="gallery-arrow right" onclick="nextGallery('mani')">❯</button>
-    </div>
-    <div class="gallery-dots" id="dots-mani"></div>
-
-    <br>
-    <h3>Extention ciglia</h3><br>
-    <div class="gallery-grid">
-        <img src="ciglia.webp" alt="ciglia">
-        <img src="ciglia2.webp" alt="ciglia2">
-        <img src="ciglia3.webp" alt="ciglia3">
-        <img src="ciglia4.webp" alt="ciglia4">
-        <img src="ciglia5.webp" alt="ciglia5">
-        <img src="ciglia6.webp" alt="ciglia6">
-    </div>
-
-    <div class="gallery-slider">
-        <button class="gallery-arrow left" onclick="prevGallery('ciglia')">❮</button>
-        <div class="gallery-track" id="track-ciglia">
-            <img src="ciglia.webp" alt="ciglia" fetchpriority="high">
-            <img src="ciglia2.webp" alt="ciglia2" loading="lazy">
-            <img src="ciglia3.webp" alt="ciglia3" loading="lazy">
-            <img src="ciglia4.webp" alt="ciglia4" loading="lazy">
-            <img src="ciglia5.webp" alt="ciglia5" loading="lazy">
-            <img src="ciglia6.webp" alt="ciglia6" loading="lazy">
-        </div>
-        <button class="gallery-arrow right" onclick="nextGallery('ciglia')">❯</button>
-    </div>
-    <div class="gallery-dots" id="dots-ciglia"></div>
-
-    <br>
-    <h3>Tatuaggi</h3><br>
-    <div class="gallery-grid">
-        <img src="tatuaggio.webp" alt="Tatuaggio">
-        <img src="tatuaggio2.webp" alt="Tatuaggio2">
-        <img src="tatuaggio3.webp" alt="Tatuaggio3">
-        <img src="tatuaggio4.webp" alt="Tatuaggio4">
-        <img src="tatuaggio5.webp" alt="Tatuaggio5">
-        <img src="tatuaggio6.webp" alt="Tatuaggio6">
-    </div>
-
-    <div class="gallery-slider">
-        <button class="gallery-arrow left" onclick="prevGallery('tatuaggi')">❮</button>
-        <div class="gallery-track" id="track-tatuaggi">
-            <img src="tatuaggio.webp" alt="Tatuaggio" fetchpriority="high">
-            <img src="tatuaggio2.webp" alt="Tatuaggio2" loading="lazy">
-            <img src="tatuaggio3.webp" alt="Tatuaggio3" loading="lazy">
-            <img src="tatuaggio4.webp" alt="Tatuaggio4" loading="lazy">
-            <img src="tatuaggio5.webp" alt="Tatuaggio5" loading="lazy">
-            <img src="tatuaggio6.webp" alt="Tatuaggio6" loading="lazy">
-        </div>
-        <button class="gallery-arrow right" onclick="nextGallery('tatuaggi')">❯</button>
-    </div>
-    <div class="gallery-dots" id="dots-tatuaggi"></div>
-</section>
-
-
-<footer>
-    <div class="footer-container">
-        <!-- CONTATTI -->
-        <div class="footer-section">
-            <h4>Contatti</h4>
-            <p>
-                Indirizzo: <a href="https://maps.app.goo.gl/NoVr2aFVhgPyCJK17" target="_blank">Via Piazza 8 Marzo, 12, 20080 Bubbiano MI</a><br>
-                Telefono: <a href="tel:+393487819352">+39 348 781 9352</a><br>
-                WhatsApp: <a href="https://wa.me/393487819352">Inizia chat</a><br>
-                Email: <a href="mailto:artedielisa02@gmail.com">artedielisa02@gmail.com</a><br>
-                Instagram: <a href="https://www.instagram.com/artedielisaofficial/">artedielisaofficial</a>
-            </p>
-        </div>
-
-       
-
-        <!-- INFO LEGALI -->
-        <div class="footer-section">
-            <h4>Info Legali</h4>
-            <p>
-                P.IVA: 13683820966<br>
-                <a href="cookie.html">Cookie Policy</a> | <a href="privacy.html">Privacy Policy</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Foto trattamenti di Artedielisa - Centro Estetico a Bubbiano</title>
+        <meta name="description" content="Centro estetico Artedielisa: bellezza, benessere e cura di te. Trattamenti professionali su appuntamento a Bubbiano MI.">
+        <meta name="keywords" content="estetista, centro estetico, bellezza, trattamenti, Bubbiano, Bettola, Casorate primo, Rosate, Besate, Fallavecchia, Motta visconti">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="logo.ico" sizes="any">
+        <link rel="icon" href="logo.png" type="image/png">
+        <link rel="apple-touch-icon" href="logo.png">
+        <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+        <link rel="canonical" href="https://www.artedielisa.it/galleria.html">
+    </head>
+    <body>
+        <header class="hero">
+            <img src="logo.avif" alt="Artedielisa logo" class="logo" width="120" height="120">
+            <h1>Artedielisa</h1>
+            <p>Benessere, bellezza e cura di te</p>
+            <a href="https://wa.me/393487819352" class="btn-primary">Prenota ora</a>
+            <div class="mobile-header">
+                <button class="menu-toggle" aria-label="Apri menu" >☰</button>
+                <div class="mobile-logo">
+                    <img src="logo.avif" alt="Artedielisa logo" width="50" height="50">
+                    <span>Artedielisa</span>
+                </div>
+                <a href="https://wa.me/393487819352" class="mobile-book">Prenota ora</a>
+            </div>
+        </header>
+        <main>
+            <nav class="menu">
+                <button class="menu-close">✕</button>
+                <div class="menu-links">
+                    <a href="https://www.artedielisa.it/">Chi sono</a>
+                    <a href="trattamenti.html">Trattamenti</a>
+                    <a href="galleria.html" class="active">Galleria</a>
+                    <a href="dove.html">Cabina</a>
+                    <a href="contatti.html">Contattami</a>
+                </div>
+            </nav>
+            <section class="gallery-section bg-light">
+                <h2>I miei trattamenti</h2>
+                <p>
+            Questa galleria raccoglie alcuni esempi reali dei trattamenti estetici eseguiti presso il centro Artedielisa a Bubbiano. 
+            Ogni immagine mostra risultati autentici di servizi come manicure, extension ciglia e trattamenti estetici personalizzati, 
+            realizzati con attenzione ai dettagli e alla qualità.
             </p>
             <p>
-                Questo sito non utilizza cookie di profilazione. Eventuali cookie di terze parti sono utilizzati solo cliccando su link esterni.
+            Sfoglia le foto per scoprire il risultato finale dei trattamenti e trovare ispirazione. 
+            Per maggiori informazioni o per prenotare un appuntamento, visita la pagina dei 
+            <a href="trattamenti.html">trattamenti</a> oppure vai alla sezione 
+            <a href="contatti.html">contatti</a>.
             </p>
-        </div>
-
- <!-- SOCIAL -->
-        <div class="footer-section">
-            <h4>Pagine</h4>
-            <p>
-                Homepage: <a href="index.html">Chi sono</a><br>
-                Scopri i trattamenti: <a href="trattamenti.html">Trattamenti</a><br>
-                Guarda i risultati: <a href="galleria.html">Galleria</a><br>
-                Dove mi trovo: <a href="dove.html">Cabina</a><br>
-                Prenota l'appuntamento: <a href="contatti.html">Contattami</a>
-            </p>
-        </div>
-
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 Artedielisa - Tutti i diritti riservati | Icons by <a href="https://icons8.com/">Icons8</a></p>
-    </div>
-</footer>
-
-<script src="script.js"></script>
-<script src="galleria.js"></script>
-</body>
-
+                <h3>Manicure</h3><br>
+                <div class="gallery-grid">
+                    <img src="unghie.webp" alt="unghie">
+                    <img src="unghie2.webp" alt="unghie2">
+                    <img src="unghie3.webp" alt="unghie3">
+                    <img src="unghie4.webp" alt="unghie4">
+                    <img src="unghie5.webp" alt="unghie5">
+                    <img src="unghie6.webp" alt="unghie6">
+                    <img src="unghie7.webp" alt="unghie7">
+                    <img src="unghie8.webp" alt="unghie8">
+                </div>
+                <div class="gallery-slider">
+                    <button class="gallery-arrow left" onclick="prevGallery('mani')">❮</button>
+                    <div class="gallery-track" id="track-mani">
+                        <img src="unghie.webp" alt="unghie" fetchpriority="high">
+                        <img src="unghie2.webp" alt="unghie2" loading="lazy">
+                        <img src="unghie3.webp" alt="unghie3" loading="lazy">
+                        <img src="unghie4.webp" alt="unghie4" loading="lazy">
+                        <img src="unghie5.webp" alt="unghie5" loading="lazy">
+                        <img src="unghie6.webp" alt="unghie6" loading="lazy">
+                        <img src="unghie7.webp" alt="unghie7" loading="lazy">
+                        <img src="unghie8.webp" alt="unghie8" loading="lazy">
+                    </div>
+                    <button class="gallery-arrow right" onclick="nextGallery('mani')">❯</button>
+                </div>
+                <div class="gallery-dots" id="dots-mani"></div>
+                <br>
+                <h3>Extention ciglia</h3><br>
+                <div class="gallery-grid">
+                    <img src="ciglia.webp" alt="ciglia">
+                    <img src="ciglia2.webp" alt="ciglia2">
+                    <img src="ciglia3.webp" alt="ciglia3">
+                    <img src="ciglia4.webp" alt="ciglia4">
+                    <img src="ciglia5.webp" alt="ciglia5">
+                    <img src="ciglia6.webp" alt="ciglia6">
+                </div>
+                <div class="gallery-slider">
+                    <button class="gallery-arrow left" onclick="prevGallery('ciglia')">❮</button>
+                    <div class="gallery-track" id="track-ciglia">
+                        <img src="ciglia.webp" alt="ciglia" fetchpriority="high">
+                        <img src="ciglia2.webp" alt="ciglia2" loading="lazy">
+                        <img src="ciglia3.webp" alt="ciglia3" loading="lazy">
+                        <img src="ciglia4.webp" alt="ciglia4" loading="lazy">
+                        <img src="ciglia5.webp" alt="ciglia5" loading="lazy">
+                        <img src="ciglia6.webp" alt="ciglia6" loading="lazy">
+                    </div>
+                    <button class="gallery-arrow right" onclick="nextGallery('ciglia')">❯</button>
+                </div>
+                <div class="gallery-dots" id="dots-ciglia"></div>
+                <br>
+                <h3>Tatuaggi</h3><br>
+                <div class="gallery-grid">
+                    <img src="tatuaggio.webp" alt="Tatuaggio">
+                    <img src="tatuaggio2.webp" alt="Tatuaggio2">
+                    <img src="tatuaggio3.webp" alt="Tatuaggio3">
+                    <img src="tatuaggio4.webp" alt="Tatuaggio4">
+                    <img src="tatuaggio5.webp" alt="Tatuaggio5">
+                    <img src="tatuaggio6.webp" alt="Tatuaggio6">
+                </div>
+                <div class="gallery-slider">
+                    <button class="gallery-arrow left" onclick="prevGallery('tatuaggi')">❮</button>
+                    <div class="gallery-track" id="track-tatuaggi">
+                        <img src="tatuaggio.webp" alt="Tatuaggio" fetchpriority="high">
+                        <img src="tatuaggio2.webp" alt="Tatuaggio2" loading="lazy">
+                        <img src="tatuaggio3.webp" alt="Tatuaggio3" loading="lazy">
+                        <img src="tatuaggio4.webp" alt="Tatuaggio4" loading="lazy">
+                        <img src="tatuaggio5.webp" alt="Tatuaggio5" loading="lazy">
+                        <img src="tatuaggio6.webp" alt="Tatuaggio6" loading="lazy">
+                    </div>
+                    <button class="gallery-arrow right" onclick="nextGallery('tatuaggi')">❯</button>
+                </div>
+                <div class="gallery-dots" id="dots-tatuaggi"></div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>Contatti</h4>
+                    <p>
+                        Indirizzo: <a href="https://maps.app.goo.gl/NoVr2aFVhgPyCJK17" target="_blank">Via Piazza 8 Marzo, 12, 20080 Bubbiano MI</a><br>
+                        Telefono: <a href="tel:+393487819352">+39 348 781 9352</a><br>
+                        WhatsApp: <a href="https://wa.me/393487819352">Inizia chat</a><br>
+                        Email: <a href="mailto:artedielisa02@gmail.com">artedielisa02@gmail.com</a><br>
+                        Instagram: <a href="https://www.instagram.com/artedielisaofficial/">artedielisaofficial</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Info Legali</h4>
+                    <p>
+                        P.IVA: 13683820966<br>
+                        <a href="cookie.html">Cookie Policy</a> | <a href="privacy.html">Privacy Policy</a>
+                    </p>
+                    <p>
+                        Questo sito non utilizza cookie di profilazione. Eventuali cookie di terze parti sono utilizzati solo cliccando su link esterni.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Pagine</h4>
+                    <p>
+                        Homepage: <a href="index.html">Chi sono</a><br>
+                        Scopri i trattamenti: <a href="trattamenti.html">Trattamenti</a><br>
+                        Guarda i risultati: <a href="galleria.html">Galleria</a><br>
+                        Dove mi trovo: <a href="dove.html">Cabina</a><br>
+                        Prenota l'appuntamento: <a href="contatti.html">Contattami</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Artedielisa - Tutti i diritti riservati | Icons by <a href="https://icons8.com/">Icons8</a></p>
+            </div>
+        </footer>
+        <script src="script.js" defer></script>
+        <script src="galleria.js" defer></script>
+    </body>
 </html>
 
 
