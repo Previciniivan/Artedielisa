@@ -12,7 +12,6 @@ body {
 }
 .icon {
     vertical-align: middle;
-    margin-right: 6px;
 }
 
 /* HEADER */
@@ -1040,4 +1039,375 @@ table.orari td:last-child.chiuso {
         grid-template-columns: 1fr;
         gap: 30px;
     }
+}
+
+/* --- STILI HOMEPAGE PREMIUM --- */
+
+.container-premium {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #1f3b5b;
+    margin-bottom: 40px;
+}
+
+/* Service Cards */
+.service-grid-premium {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.service-card-premium {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    text-align: center;
+    border: 1px solid #edf2f7;
+}
+
+
+
+.service-card-premium img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card-premium h4 {
+    padding: 20px 10px 10px;
+    color: #1f3b5b;
+    font-size: 1.3rem;
+}
+
+.service-card-premium p {
+    padding: 0 20px 25px;
+    color: #5f6f82;
+    font-size: 0.95rem;
+}
+
+/* Pulsanti Secondari */
+.btn-secondary-premium {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #f2d7c6;
+    color: #1f3b5b;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-secondary-premium:hover {
+    background: #f2d7c6;
+    text-decoration: none;
+}
+
+/* Mappa e Location */
+.location-section {
+    padding: 60px 20px;
+    background: #fdf6f2; /* Sfondo leggermente beige per staccare */
+}
+
+.map-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px !important;
+    text-align: center;
+}
+
+.mappa-premium {
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.map-link {
+    color: #3f5f8f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Recensioni */
+.recensioni-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.review-card {
+    min-width: 250px;
+    text-align: center;
+    padding: 25px !important;
+}
+
+.stars {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.center-btn { text-align: center; }
+
+@media (max-width: 690px) {
+
+    .service-grid-premium {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .service-card-premium {
+        min-width: 100%;
+        transition: transform 0.6s ease, opacity 0.6s ease;
+        opacity: 0;
+        transform: translateX(100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .service-card-premium.active {
+        opacity: 1;
+        transform: translateX(0);
+        position: relative;
+    }
+
+    .service-card-premium.exit {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+}
+
+.service-grid-premium {
+    overflow: hidden;
+}
+
+.exit-left {
+    transform: translateX(-100%);
+}
+
+/* Desktop */
+.mobile-only {
+    display: none;
+}
+
+/* Mobile */
+@media (max-width: 690px) {
+    .desktop-only {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
+}
+
+@media (max-width: 690px) {
+
+    .service-slider {
+        position: relative;
+        overflow: hidden;
+        height: 320px;
+    }
+
+    .service-slider .service-card-premium {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .service-slider .active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .service-slider .exit-left {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 690px) {
+    .no-hover:hover {
+        transform: none !important;
+    }
+}
+
+/* default: nascondo mobile */
+#mobile {
+    display: none !important;
+}
+
+/* mobile */
+@media (max-width: 690px) {
+
+    #fisso {
+        display: none !important;
+    }
+
+    #mobile {
+        display: block !important;
+    }
+
+}
+
+/* ===== MOBILE SERVICES ===== */
+
+.container-premium-mobile {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section-title-mobile {
+    text-align: center;
+    font-size: 2rem;
+    color: #1f3b5b;
+    margin-bottom: 40px;
+}
+
+.service-grid-mobile {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-card-mobile {
+    min-width: 100%;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #edf2f7;
+
+    /* SLIDER */
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.service-card-mobile img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card-mobile h4 {
+    padding: 20px 10px 10px;
+    color: #1f3b5b;
+    font-size: 1.3rem;
+}
+
+.service-card-mobile p {
+    padding: 0 20px 25px;
+    color: #5f6f82;
+    font-size: 0.95rem;
+}
+
+/* stati slider */
+.service-card-mobile.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: relative;
+}
+
+.service-card-mobile.exit-left {
+    transform: translateX(-100%);
+    opacity: 1;
+}
+
+/* ===== MOBILE SERVICES SLIDER FIX DEFINITIVO ===== */
+
+@media (max-width: 690px) {
+
+    .service-grid-mobile {
+        position: relative;
+        overflow: hidden;
+        height: 350px;
+        margin-bottom: 20px;
+    }
+
+    .service-card-mobile {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        text-align: center;
+        border: 1px solid #edf2f7;
+
+        /* stato iniziale: fuori a destra */
+        transform: translateX(100%);
+        opacity: 0;
+
+        transition: transform 0.6s ease, opacity 0s ease;
+    }
+
+    /* CARD ATTIVA (CENTRO) */
+    .service-card-mobile.active {
+        transform: translateX(0);
+        opacity: 1;
+        z-index: 2;
+    }
+
+    /* USCITA A SINISTRA */
+    .service-card-mobile.exit-left {
+        transform: translateX(-100%);
+        opacity: 1;
+        z-index: 1;
+    }
+
+    /* contenuti */
+    .service-card-mobile img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .service-card-mobile h4 {
+        padding: 20px 10px 10px;
+        color: #1f3b5b;
+        font-size: 1.3rem;
+    }
+
+    .service-card-mobile p {
+        padding: 0 20px 25px;
+        color: #5f6f82;
+        font-size: 0.95rem;
+    }
+}
+
+.service-card-mobile img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.service-card-premium {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
 }
