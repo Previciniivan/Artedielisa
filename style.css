@@ -892,3 +892,152 @@ table.orari .chiuso {
 table.orari td:last-child.chiuso {
     color: #c0392b;
 }
+
+/* Layout a griglia */
+#contatti-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Card di contatto */
+.contact-cards { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+.card {
+    display: flex; align-items: center; gap: 15px;
+    padding: 15px; background: #f9f9f9; border-radius: 12px;
+    text-decoration: none; color: #333; border: 1px solid #eee;
+    transition: transform 0.2s, background 0.2s;
+}
+.card:hover { transform: scale(1.02); background: #fff; border-color: #d8bfd8; }
+
+/* Tabella Orari */
+.orari-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+.orari-table td { padding: 12px; border-bottom: 1px solid #eee; }
+.chiuso { color: #d9534f; font-weight: bold; }
+
+/* Bottone Prenota */
+.btn-prenota {
+    display: block; text-align: center; background: #5a3e5a; color: white;
+    padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    #contatti-grid { grid-template-columns: 1fr; }
+}
+
+
+.intro-contatti {
+    max-width: 1000px;
+    margin: 40px auto 20px auto;
+    padding: 0 20px;
+    text-align: center; /* Opzionale: centrato è spesso più elegante per il testo di intro */
+}
+
+.intro-contatti h2 { margin-bottom: 20px; }
+
+
+/* --- INTRO --- */
+.intro-contatti-premium {
+    text-align: center;
+    padding: 60px 20px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.intro-text p {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* --- GRID --- */
+#contatti-grid-premium {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    align-items: start;
+}
+
+/* --- CARDS --- */
+.card-premium {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #ffffff;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #1f3b5b;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+.card-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: #f2d7c6;
+}
+.icon-wrapper {
+    background: #fdf6f2; /* Sfondo chiarissimo beige */
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-premium strong { display: block; font-size: 1.1rem; }
+.card-premium span { color: #5f6f82; font-size: 0.95rem; }
+
+/* --- TABELLA ORARI --- */
+.table-container {
+    background: white;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+.orari-premium {
+    width: 100%;
+    border-collapse: collapse;
+}
+.orari-premium td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #f1f4f8;
+    color: #1f3b5b;
+}
+.orari-premium tr:last-child td { border-bottom: none; }
+.orari-premium td:last-child { text-align: right; font-weight: bold; }
+
+/* --- BOTTONE PRENOTA (Uniformato al beige) --- */
+.btn-prenota-premium {
+    display: block;
+    text-align: center;
+    background-color: #f2d7c6; /* Beige del logo/header */
+    color: #1f3b5b;
+    padding: 18px;
+    border-radius: 50px; /* Più arrotondato = più moderno */
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(242, 215, 198, 0.4);
+}
+.btn-prenota-premium:hover {
+    background-color: #e0c2ab;
+    transform: scale(1.02);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 850px) {
+    #contatti-grid-premium {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
