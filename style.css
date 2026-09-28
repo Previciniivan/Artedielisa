@@ -453,7 +453,7 @@ nav.menu {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         align-items: center;
-        height: 110px;
+        height: 130px;
         padding: 0 10px;
         gap: 0;
 
@@ -489,7 +489,7 @@ nav.menu {
         text-align: center;
     }
     .mobile-logo img {
-        width: 50px;
+        width: 70px;
         height: auto;
         margin-bottom: 2px;
     }
