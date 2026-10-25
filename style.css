@@ -1,9 +1,11 @@
 /* Artedielisa - stile 2026. Palette presa dal logo: blu inchiostro, petrolio, polvere, cipria. */
+@font-face{font-family:"Lora";src:url("lora.woff") format("woff");font-weight:400 700;font-style:normal;font-display:swap}
 :root{
   --ink:#12304d; --petrolio:#2d5775; --polvere:#8fb0c0; --nebbia:#eaf0f4; --carta:#fbfcfd;
   --cipria:#f2d7c6; --cipria-s:#e8c3ab; --testo:#1c2b3a; --muted:#566879; --linea:#d5dee5;
-  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Lora","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --serif-h1:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:"Lora","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
   --petal:0 42% 0 42% / 0 30% 0 30%; --petal-r:42% 0 42% 0 / 30% 0 30% 0;
   --wrap:1120px; --head:76px;
 }
@@ -15,7 +17,7 @@ a{color:var(--petrolio);text-underline-offset:3px}
 a:hover{color:var(--ink)}
 :focus-visible{outline:3px solid var(--petrolio);outline-offset:3px;border-radius:4px}
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;color:var(--ink);margin:0 0 .5em;text-wrap:balance}
-h1{font-size:clamp(2.4rem,6vw,4.1rem);letter-spacing:-.01em}
+h1{font-family:var(--serif-h1);font-size:clamp(2.4rem,6vw,4.1rem);letter-spacing:-.01em}
 h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}
 h3{font-size:1.35rem}
 p{margin:0 0 1em;max-width:62ch}
@@ -72,7 +74,7 @@ p{margin:0 0 1em;max-width:62ch}
 .sec.dark a{color:var(--cipria)}
 .split{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
 .split .photo{border-radius:var(--petal);overflow:hidden;max-width:380px;justify-self:center}
-.split .photo img{aspect-ratio:5/7;object-fit:cover;width:100%}
+.split .photo img{aspect-ratio:3/4;object-fit:cover;width:100%}
 .head-row{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
 .head-row h2{margin:0}
 
@@ -177,7 +179,7 @@ dialog.lb::backdrop{background:rgba(8,20,34,.97)}
   .cat .ph{display:none}
   .site-foot .cols{grid-template-columns:1fr}
 }
-@media (max-width:980px){
+@media (max-width:1080px){
   :root{--head:68px}
   .site-head{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--carta)}
   .burger{display:grid;place-items:center}
@@ -187,8 +189,9 @@ dialog.lb::backdrop{background:rgba(8,20,34,.97)}
   .nav.open{visibility:visible;opacity:1;transform:none;transition-delay:0s}
   .nav>a,.nav .nav-foot{opacity:0;transform:translateY(14px);transition:opacity .3s ease,transform .3s ease,background .2s}
   .nav.open>a,.nav.open .nav-foot{opacity:1;transform:none}
-  .nav.open>a:nth-child(1){transition-delay:.06s}.nav.open>a:nth-child(2){transition-delay:.1s}.nav.open>a:nth-child(3){transition-delay:.14s}
-  .nav.open>a:nth-child(4){transition-delay:.18s}.nav.open>a:nth-child(5){transition-delay:.22s}.nav.open .nav-foot{transition-delay:.28s}
+  .nav.open>a:nth-child(1){transition-delay:.06s}.nav.open>a:nth-child(2){transition-delay:.10s}.nav.open>a:nth-child(3){transition-delay:.14s}
+  .nav.open>a:nth-child(4){transition-delay:.18s}.nav.open>a:nth-child(5){transition-delay:.22s}.nav.open>a:nth-child(6){transition-delay:.26s}
+  .nav.open>a:nth-child(7){transition-delay:.30s}.nav.open .nav-foot{transition-delay:.34s}
   .nav a{font-size:1.4rem;font-family:var(--serif);padding:16px 8px;border-radius:12px;text-align:center}
   body.lock{overflow:hidden}
 }
@@ -200,12 +203,12 @@ dialog.lb::backdrop{background:rgba(8,20,34,.97)}
   .card .ph img{aspect-ratio:4/3}
   .strip{grid-template-columns:1fr 1fr}.strip img:nth-child(3){display:none}
   .grid{grid-template-columns:1fr 1fr;gap:10px}
-  .dock{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:90;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(251,252,253,.96);border-top:1px solid var(--linea)}
+  .dock{transition:transform .42s ease,opacity .42s ease,visibility 0s;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:90;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(251,252,253,.96);border-top:1px solid var(--linea)}
   .dock .btn{min-height:50px}
   .dock svg{width:20px;height:20px}
   .lb .pv,.lb .nx{top:auto;bottom:18px}
 }
-@media (max-width:980px){
+@media (max-width:1080px){
   .catnav{display:none}
   .page-top{padding:36px 0 30px}
   .cats{padding-top:24px;padding-bottom:10px}
@@ -242,9 +245,9 @@ dialog.lb::backdrop{background:rgba(8,20,34,.97)}
   .nav .nav-foot .btn-soft{color:var(--ink)}
   .nav .nav-foot .btn-soft:hover{background:var(--ink);color:#fff}
   .nav-foot p{margin:6px auto 0;color:var(--muted);font-size:.95rem;text-align:center}
-  body.lock .dock{display:none}
+  body.lock .dock{transform:translateY(115%);opacity:0;visibility:hidden;transition:transform .42s ease,opacity .42s ease,visibility 0s linear .42s}
 }
-@media (min-width:981px){
+@media (min-width:1081px){
   .nav-foot{display:none}
 }
 .nav a{white-space:nowrap}
@@ -254,6 +257,7 @@ dialog.lb::backdrop{background:rgba(8,20,34,.97)}
 .burger[aria-expanded=true] path:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .grid.studio{grid-template-columns:repeat(4,1fr)}
+.grid.studio img{aspect-ratio:3/4}
 .site-foot{text-align:center}
 .site-foot img,.site-foot p{margin-left:auto;margin-right:auto}
 .site-foot ul{display:grid;justify-items:center}
@@ -261,7 +265,7 @@ dialog.lb::backdrop{background:rgba(8,20,34,.97)}
   .grid.studio{grid-template-columns:repeat(2,1fr)}
   .split .photo{display:none}
 }
-@media (max-width:980px){
+@media (max-width:1080px){
   .two,#recensioni,.note,.cta{text-align:center}
   #recensioni p,.note p,.cta p{margin-left:auto;margin-right:auto}
   .reviews{margin-left:auto;margin-right:auto}
@@ -269,7 +273,7 @@ dialog.lb::backdrop{background:rgba(8,20,34,.97)}
   .two .btns,.split .btns{justify-content:center}
   .ccard{text-align:left}
 }
-@media (max-width:980px){
+@media (max-width:1080px){
   .rail-ui{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:-8px 0 16px}
   .swipe-hint{display:flex;align-items:center;gap:8px;margin:0;color:var(--ink);font-weight:600;font-size:.95rem;max-width:none;transition:opacity .4s}
   .swipe-hint svg{width:20px;height:20px;animation:nudge 1.4s ease-in-out infinite}
@@ -285,9 +289,127 @@ dialog.lb::backdrop{background:rgba(8,20,34,.97)}
   .rail-next:not(.off){animation:pulse 1.6s ease-in-out infinite}
   .rail-arrow.off{opacity:0;pointer-events:none;animation:none}
 }
-@media (min-width:981px){.rail-ui,.rail-arrow{display:none}}
+@media (min-width:1081px){.rail-ui,.rail-arrow{display:none}}
 @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
 @keyframes pulse{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+
+/* Offerta del momento */
+.offer-sec{padding:64px 0 0}
+.offer{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:36px;border-radius:28px;background:linear-gradient(135deg,var(--cipria),#f8e8dd);color:var(--ink)}
+.offer h2{margin-bottom:.3em}
+.offer p{color:#3b4b5b}
+.offer-tag{display:inline-block;background:var(--ink);color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:14px}
+.offer .offer-until{font-weight:600;color:var(--ink)}
+.offer-list{list-style:none;margin:0;padding:0;background:rgba(255,255,255,.7);border-radius:20px;padding:6px 22px}
+.offer-list li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid rgba(18,48,77,.12)}
+.offer-list li:last-child{border-bottom:0}
+.old{color:var(--muted);text-decoration:line-through;font-weight:400;margin-right:10px}
+.new{color:var(--ink);font-weight:800;font-size:1.15em}
+.offer-list .p,.prices .p{white-space:nowrap}
+.prices .on-offer .new{background:var(--cipria);padding:2px 12px;border-radius:999px}
+.prices .tag{display:inline-block;margin-left:10px;background:var(--ink);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 9px;border-radius:999px;vertical-align:2px}
+.offer-bar{background:var(--cipria);color:var(--ink);padding:12px 0;text-align:center;font-size:.98rem}
+@media (max-width:1080px){
+  .offer{grid-template-columns:1fr;padding:26px 22px;text-align:center;gap:22px;border-radius:24px}
+  .offer p{margin-left:auto;margin-right:auto}
+  .offer .btns{justify-content:center}
+  .offer-sec{padding-top:44px}
+  .prices .tag{display:table;margin:4px 0 0}
+  .prices li{flex-wrap:wrap}
+}
+
+/* Prodotti */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px}
+.product{display:flex;flex-direction:column;align-items:center;text-align:center}
+.product .ph{width:100%;border-radius:var(--petal);overflow:hidden;margin-bottom:16px;background:var(--nebbia)}
+.product:nth-child(even) .ph{border-radius:var(--petal-r)}
+.product .ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.product h3{font-size:1.25rem;margin:0 0 .2em}
+.product .p{margin:0 0 14px;font-weight:700;color:var(--ink);font-size:1.15rem;max-width:none}
+.product .btn{min-height:44px;padding:.5em 1.5em;margin-top:auto}
+.product.on-offer .new{background:var(--cipria);padding:2px 12px;border-radius:999px}
+.product .tag{display:table;margin:8px auto 0;background:var(--ink);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 9px;border-radius:999px}
+@media (min-width:1081px){.pgrid:has(.product:nth-child(4):last-child){grid-template-columns:repeat(4,1fr)}}
+.pmini{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:28px}
+.pm{display:block;text-align:center;text-decoration:none;color:var(--ink)}
+.pm img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--petal);transition:transform .4s}
+.pm:nth-child(2) img{border-radius:var(--petal-r)}
+.pm:hover img{transform:scale(1.03)}
+.pm span{display:block;margin-top:12px;font-family:var(--serif);font-size:1.2rem}
+.note .btns{justify-content:flex-start}
+@media (max-width:1080px){
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:28px 14px}
+  .product .btn{width:100%}
+  .product h3{min-height:2.55em;display:flex;flex-direction:column;justify-content:center;align-items:center;line-height:1.25}
+  .note .btns{justify-content:center}
+  #prodotti{text-align:center}
+  #prodotti p{margin-left:auto;margin-right:auto}
+  #prodotti .head-row{justify-content:center;text-align:center}
+}
+@media (max-width:640px){
+  .pmini{gap:10px}
+  .pm span{font-size:.95rem;line-height:1.25}
+}
+
+/* Home su computer: orari/prenota e recensioni centrati */
+#recensioni{text-align:center}
+#recensioni p{margin-left:auto;margin-right:auto}
+#recensioni .reviews{margin-left:auto;margin-right:auto}
+@media (min-width:1081px){
+  #orari .two>div:first-child{max-width:420px}
+  #orari .two>div:first-child h2{text-align:left}
+  #orari .two>div:first-child p,#orari .two>div:first-child .btn{text-align:center}
+  #orari .two>div:first-child p{margin-left:auto;margin-right:auto}
+  #orari .two>div:first-child .btn{display:flex;width:fit-content;margin:0 auto}
+}
+
+/* Prodotti: foto cliccabile, ordinamento, schede in home */
+.product .ph button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;font:inherit}
+.product .ph img{transition:transform .4s}
+.product .ph button:hover img{transform:scale(1.04)}
+.sortbar{display:flex;justify-content:space-between;align-items:center;gap:14px 20px;flex-wrap:wrap;margin:0 0 34px;padding:10px 12px 10px 24px;background:var(--nebbia);border-radius:999px}
+.sortbar .count{font-weight:600;color:var(--ink)}
+.sortctl{display:flex;align-items:center;gap:14px}
+.sortctl .lbl{color:var(--muted);font-size:.95rem}
+.seg{position:relative;display:grid;grid-template-columns:1fr 1fr;background:#fff;border-radius:999px;padding:4px;box-shadow:inset 0 0 0 1px var(--linea)}
+.seg .thumb{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);background:var(--ink);border-radius:999px;transition:transform .32s cubic-bezier(.4,.1,.2,1)}
+.seg[data-dir=desc] .thumb{transform:translateX(100%)}
+.seg button{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;border:0;background:none;font:inherit;font-weight:600;font-size:.95rem;padding:10px 20px;border-radius:999px;color:var(--ink);cursor:pointer;transition:color .25s}
+.seg button svg{width:16px;height:16px;flex:none}
+.seg button[aria-pressed=true]{color:#fff}
+.pcard.on-offer .new{background:var(--cipria);padding:2px 12px;border-radius:999px}
+.pcard .tag{display:table;margin:6px 0 0;background:var(--ink);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 9px;border-radius:999px}
+.pcard .ph{background:var(--nebbia)}
+@media (max-width:1080px){
+  .sortbar{justify-content:center}
+  .pgrid .product:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 7px);justify-self:center}
+  .pcard .tag{margin-left:6px}
+}
+@media (max-width:640px){
+  .sortbar{flex-direction:column;align-items:stretch;border-radius:24px;padding:14px;gap:10px;text-align:center}
+  .sortctl{flex-direction:column;gap:8px}
+  .seg{width:100%}
+  .seg button{padding:11px 8px;font-size:.92rem;gap:6px}
+}
+
+/* Home: 5 schede trattamenti (3 + 2 centrate) */
+@media (min-width:1081px){
+  .cards:has(.card:nth-child(5):last-child){grid-template-columns:repeat(6,1fr)}
+  .cards:has(.card:nth-child(5):last-child) .card{grid-column:span 2}
+  .cards:has(.card:nth-child(5):last-child) .card:nth-child(4){grid-column:2/4}
+  .cards:has(.card:nth-child(5):last-child) .card:nth-child(5){grid-column:4/6}
+  .cards .card:nth-child(4) .ph{border-radius:var(--petal-r)}
+}
+/* Listino: la stessa foto per le due pressoterapie (solo su PC) */
+.gphoto{display:none}
+@media (min-width:1081px){
+  .catgroup{display:grid;grid-template-columns:.7fr 1.3fr;column-gap:48px;align-items:start;padding:52px 0;border-bottom:1px solid var(--linea)}
+  .catgroup .gphoto{display:block;grid-column:1;grid-row:1/3;align-self:center;max-width:360px;border-radius:var(--petal);overflow:hidden}
+  .catgroup .gphoto img{width:100%;aspect-ratio:5/7;object-fit:cover}
+  .catgroup .cat{grid-column:2;display:block;padding:0;border:0}
+  .catgroup .cat+.cat{margin-top:40px}
+  .catgroup .cat summary{margin-bottom:10px}
+}
 @media (max-width:360px){
   .dock{gap:8px;padding-left:10px;padding-right:10px}
   .dock .btn{padding:.6em .6em;font-size:.95rem;gap:.4em}

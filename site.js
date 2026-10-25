@@ -46,25 +46,25 @@
     el.classList.toggle('open', open);
   }
 
-  // Galleria: filtri e lightbox
-  var grid = document.querySelector('.grid');
+  // Galleria e prodotti: filtri, ordinamento e ingrandimento foto
+  var grid = document.querySelector('.grid, .pgrid');
   if (grid) {
-    var items = [].slice.call(grid.querySelectorAll('button'));
+    var allItems = function () { return [].slice.call(grid.querySelectorAll('.ph button, button[data-c]')); };
     document.querySelectorAll('.filters button').forEach(function (b) {
       b.addEventListener('click', function () {
         document.querySelectorAll('.filters button').forEach(function (o) { o.setAttribute('aria-pressed', o === b); });
-        items.forEach(function (it) { it.hidden = b.dataset.f !== 'tutte' && it.dataset.c !== b.dataset.f; });
+        allItems().forEach(function (it) { it.hidden = b.dataset.f !== 'tutte' && it.dataset.c !== b.dataset.f; });
       });
     });
     var dlg = document.getElementById('lb');
     var img = dlg.querySelector('img'), cap = dlg.querySelector('p'), cur = 0;
-    var visible = function () { return items.filter(function (i) { return !i.hidden; }); };
+    var visible = function () { return allItems().filter(function (i) { return !i.hidden; }); };
     var show = function (n) {
       var v = visible(); cur = (n + v.length) % v.length;
       var s = v[cur].querySelector('img');
       img.src = s.dataset.full || s.src; img.alt = s.alt; cap.textContent = s.alt;
     };
-    items.forEach(function (it) {
+    allItems().forEach(function (it) {
       it.addEventListener('click', function () { show(visible().indexOf(it)); dlg.showModal(); });
     });
     dlg.querySelector('.x').addEventListener('click', function () { dlg.close(); });
@@ -77,9 +77,39 @@
     });
   }
 
+  // Prodotti: ordine per prezzo (di base crescente; il prezzo conta quello in offerta se c'e')
+  var pgrid = document.querySelector('.pgrid');
+  if (pgrid) {
+    var sortDir = 'asc';
+    var priceOf = function (el) {
+      var n = el.querySelector('.new') || el.querySelector('.p');
+      var m = n ? n.textContent.replace(/\u00a0/g, ' ').match(/\d+(?:[.,]\d+)?/) : null;
+      return m ? parseFloat(m[0].replace(',', '.')) : 1e9;
+    };
+    [].forEach.call(pgrid.children, function (c, i) { c.dataset.i = i; });
+    window.sortProducts = function () {
+      var list = [].slice.call(pgrid.children);
+      list.sort(function (a, b) {
+        var d = priceOf(a) - priceOf(b);
+        return d !== 0 ? (sortDir === 'asc' ? d : -d) : a.dataset.i - b.dataset.i;
+      });
+      list.forEach(function (c) { pgrid.appendChild(c); });
+    };
+    var cnt = document.querySelector('.sortbar .count');
+    if (cnt) { var np = pgrid.children.length; cnt.textContent = np + (np === 1 ? ' prodotto' : ' prodotti'); }
+    var seg = document.querySelector('.sortbar .seg');
+    document.querySelectorAll('.sortbar button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        sortDir = b.dataset.sort;
+        if (seg) seg.dataset.dir = sortDir;
+        document.querySelectorAll('.sortbar button').forEach(function (o) { o.setAttribute('aria-pressed', o === b); });
+        window.sortProducts();
+      });
+    });
+  }
+
   // Schede trattamenti scorrevoli: puntini, suggerimento "scorri" e piccolo movimento iniziale
-  var rail = document.querySelector('.cards');
-  if (rail) {
+  [].forEach.call(document.querySelectorAll('.cards'), function (rail) {
     var cards = [].slice.call(rail.children);
     var dots = document.createElement('div'); dots.className = 'dots';
     cards.forEach(function (c, i) {
@@ -149,5 +179,72 @@
       }, { threshold: 0.6 });
       io.observe(rail);
     }
+  });
+
+  // Offerta del momento (si configura solo in offerta.js)
+  var eur = function (n) { return (n % 1 ? n.toFixed(2) : String(n)).replace('.', ',') + '\u00a0€'; };
+  var el_ = function (tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+  var applyOffer = function () {
+    var o = window.OFFERTA;
+    if (!o || !o.attiva) return;
+    var oggi = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
+    if ((o.inizio && oggi < o.inizio) || (o.scadenza && oggi > o.scadenza)) return;
+    var fino = o.scadenza ? 'Valida fino al ' + new Date(o.scadenza + 'T12:00:00Z').toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : '';
+    var voci = Object.keys(o.prezzi || {}).map(function (n) { return { nome: n, prima: +o.prezzi[n].prima, ora: +o.prezzi[n].ora }; });
+    var wa = 'https://wa.me/393487819352?text=' + encodeURIComponent('Ciao Elisa, vorrei prenotare con l\u2019offerta: ' + (o.titolo || 'offerta del momento'));
+
+    // Home: riquadro dopo la parte iniziale
+    var hero = document.querySelector('.hero');
+    if (hero) {
+      var sec = el_('section', 'offer-sec'); sec.id = 'offerta';
+      var wrap = el_('div', 'wrap'), box = el_('div', 'offer');
+      var left = el_('div', 'offer-text');
+      left.appendChild(el_('span', 'offer-tag', 'Offerta attiva'));
+      left.appendChild(el_('h2', null, o.titolo || 'Offerta del momento'));
+      if (o.testo) left.appendChild(el_('p', null, o.testo));
+      if (fino) left.appendChild(el_('p', 'offer-until', fino));
+      var btns = el_('div', 'btns'), a = el_('a', 'btn btn-primary', 'Prenota l\u2019offerta'); a.href = wa; btns.appendChild(a); left.appendChild(btns);
+      box.appendChild(left);
+      if (voci.length) {
+        var ul = el_('ul', 'offer-list');
+        voci.forEach(function (v) {
+          var li = el_('li'), p = el_('span', 'p');
+          li.appendChild(el_('span', 'n', v.nome));
+          p.appendChild(el_('s', 'old', eur(v.prima))); p.appendChild(el_('strong', 'new', eur(v.ora)));
+          li.appendChild(p); ul.appendChild(li);
+        });
+        box.appendChild(ul);
+      }
+      wrap.appendChild(box); sec.appendChild(wrap);
+      var anchor = document.getElementById('prodotti') || document.getElementById('orari');
+      if (anchor) anchor.parentNode.insertBefore(sec, anchor); else hero.parentNode.insertBefore(sec, hero.nextSibling);
+    }
+
+    // Listino: prezzo barrato + prezzo scontato in evidenza
+    var items = document.querySelectorAll('.prices li, .product, .pcard');
+    if (items.length) {
+      var map = {}; voci.forEach(function (v) { map[v.nome.trim().toLowerCase()] = v; });
+      var n = 0, used = {};
+      [].forEach.call(items, function (li) {
+        var nm = li.querySelector('.n'), pr = li.querySelector('.p'), v = map[nm.textContent.trim().toLowerCase()];
+        if (!nm || !pr || !v) return;
+        n++; used[nm.textContent.trim().toLowerCase()] = true; li.classList.add('on-offer');
+        nm.appendChild(el_('span', 'tag', 'Offerta'));
+        pr.textContent = '';
+        pr.appendChild(el_('s', 'old', eur(v.prima))); pr.appendChild(el_('strong', 'new', eur(v.ora)));
+      });
+      Object.keys(map).forEach(function (k) { if (!used[k]) console.warn('Offerta: "' + map[k].nome + '" non coincide con nessuna voce del listino'); });
+      if (window.sortProducts) window.sortProducts();
+      var top = document.querySelector('.page-top');
+      if (top && n) {
+        var bar = el_('div', 'offer-bar'), w2 = el_('div', 'wrap');
+        w2.appendChild(el_('strong', null, 'Offerta attiva: ' + (o.titolo || '')));
+        if (fino) w2.appendChild(document.createTextNode(' \u2013 ' + fino.charAt(0).toLowerCase() + fino.slice(1)));
+        bar.appendChild(w2); top.parentNode.insertBefore(bar, top.nextSibling);
+      }
+    }
+  };
+  if (document.querySelector('.hero, .prices, .product, .pcard')) {
+    var sc = document.createElement('script'); sc.src = 'offerta.js'; sc.onload = applyOffer; document.head.appendChild(sc);
   }
 })();
