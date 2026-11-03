@@ -190,7 +190,7 @@
     var oggi = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Rome' });
     if ((o.inizio && oggi < o.inizio) || (o.scadenza && oggi > o.scadenza)) return;
     var fino = o.scadenza ? 'Valida fino al ' + new Date(o.scadenza + 'T12:00:00Z').toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : '';
-    var voci = Object.keys(o.prezzi || {}).map(function (n) { return { nome: n, prima: +o.prezzi[n].prima, ora: +o.prezzi[n].ora }; });
+    var voci = Object.keys(o.prezzi || {}).map(function (n) { var d = o.prezzi[n]; return { nome: n.trim().replace(/\s*>\s*/g, ' > '), label: d.etichetta || n.trim().replace(/\s*>\s*/g, ' \u2013 '), prima: +d.prima, ora: +d.ora }; });
     var wa = 'https://wa.me/393487819352?text=' + encodeURIComponent('Ciao Elisa, vorrei prenotare con l\u2019offerta: ' + (o.titolo || 'offerta del momento'));
 
     // Home: riquadro dopo la parte iniziale
@@ -209,7 +209,7 @@
         var ul = el_('ul', 'offer-list');
         voci.forEach(function (v) {
           var li = el_('li'), p = el_('span', 'p');
-          li.appendChild(el_('span', 'n', v.nome));
+          li.appendChild(el_('span', 'n', v.label));
           p.appendChild(el_('s', 'old', eur(v.prima))); p.appendChild(el_('strong', 'new', eur(v.ora)));
           li.appendChild(p); ul.appendChild(li);
         });
@@ -226,14 +226,20 @@
       var map = {}; voci.forEach(function (v) { map[v.nome.trim().toLowerCase()] = v; });
       var n = 0, used = {};
       [].forEach.call(items, function (li) {
-        var nm = li.querySelector('.n'), pr = li.querySelector('.p'), v = map[nm.textContent.trim().toLowerCase()];
-        if (!nm || !pr || !v) return;
-        n++; used[nm.textContent.trim().toLowerCase()] = true; li.classList.add('on-offer');
+        var nm = li.querySelector('.n'), pr = li.querySelector('.p');
+        if (!nm || !pr) return;
+        var base = nm.textContent.trim().toLowerCase();
+        var ct = li.closest('details.cat'), h2 = ct && ct.querySelector('h2');
+        var cat = h2 ? h2.textContent.trim().toLowerCase() : '';
+        var key = (cat && map[cat + ' > ' + base]) ? cat + ' > ' + base : (map[base] ? base : '');
+        if (!key) return;
+        var v = map[key];
+        n++; used[key] = true; li.classList.add('on-offer');
         nm.appendChild(el_('span', 'tag', 'Offerta'));
         pr.textContent = '';
         pr.appendChild(el_('s', 'old', eur(v.prima))); pr.appendChild(el_('strong', 'new', eur(v.ora)));
       });
-      Object.keys(map).forEach(function (k) { if (!used[k]) console.warn('Offerta: "' + map[k].nome + '" non coincide con nessuna voce del listino'); });
+      if (document.querySelector('.prices')) Object.keys(map).forEach(function (k) { if (!used[k]) console.warn('Offerta: "' + map[k].nome + '" non coincide con nessuna voce del listino'); });
       if (window.sortProducts) window.sortProducts();
       var top = document.querySelector('.page-top');
       if (top && n) {
