@@ -243,10 +243,35 @@
       if (window.sortProducts) window.sortProducts();
       var top = document.querySelector('.page-top');
       if (top && n) {
-        var bar = el_('div', 'offer-bar'), w2 = el_('div', 'wrap');
-        w2.appendChild(el_('strong', null, 'Offerta attiva: ' + (o.titolo || '')));
-        if (fino) w2.appendChild(document.createTextNode(' \u2013 ' + fino.charAt(0).toLowerCase() + fino.slice(1)));
-        bar.appendChild(w2); top.parentNode.insertBefore(bar, top.nextSibling);
+        var svgI = function (d) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>'; };
+        var hero2 = el_('section', 'offer-hero'), w2 = el_('div', 'wrap'), card = el_('div', 'offer-card');
+        card.setAttribute('role', 'region'); card.setAttribute('aria-label', 'Offerta attiva');
+        var ico = el_('span', 'offer-ico'); ico.innerHTML = svgI('<path d="M12 3l1.9 5.4L19 10l-5.1 1.6L12 17l-1.9-5.4L5 10l5.1-1.6z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>');
+        var body = el_('div', 'offer-body');
+        body.appendChild(el_('span', 'offer-tag', 'Offerta attiva'));
+        body.appendChild(el_('h2', null, o.titolo || 'Offerta del momento'));
+        if (o.testo) body.appendChild(el_('p', null, o.testo));
+        if (fino) { var u = el_('p', 'offer-until'); u.innerHTML = svgI('<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/>'); u.appendChild(document.createTextNode(fino)); body.appendChild(u); }
+        var inOffer = voci.filter(function (v) { return used[v.nome.trim().toLowerCase()]; });
+        if (inOffer.length) {
+          var ul2 = el_('ul', 'offer-chips');
+          inOffer.forEach(function (v) {
+            var li2 = el_('li'); li2.appendChild(el_('span', 'lbl', v.label));
+            var pp = el_('span', 'pp'); pp.appendChild(el_('s', 'old', eur(v.prima))); pp.appendChild(el_('strong', 'new', eur(v.ora))); li2.appendChild(pp); ul2.appendChild(li2);
+          });
+          body.appendChild(ul2);
+        }
+        var acts = el_('div', 'btns');
+        var b1 = el_('a', 'btn btn-primary', 'Prenota l\u2019offerta'); b1.href = wa; acts.appendChild(b1);
+        var b2 = el_('a', 'btn btn-soft', 'Vedi le voci in offerta'); b2.href = '#';
+        b2.addEventListener('click', function (e) {
+          e.preventDefault(); var t = document.querySelector('.on-offer'); if (!t) return;
+          t.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          t.classList.remove('flash'); void t.offsetWidth; t.classList.add('flash');
+        });
+        acts.appendChild(b2); body.appendChild(acts);
+        card.appendChild(ico); card.appendChild(body); w2.appendChild(card); hero2.appendChild(w2);
+        top.parentNode.insertBefore(hero2, top.nextSibling);
       }
     }
   };
