@@ -191,7 +191,7 @@
     if ((o.inizio && oggi < o.inizio) || (o.scadenza && oggi > o.scadenza)) return;
     var fino = o.scadenza ? 'Valida fino al ' + new Date(o.scadenza + 'T12:00:00Z').toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }) : '';
     var voci = Object.keys(o.prezzi || {}).map(function (n) { var d = o.prezzi[n]; return { nome: n.trim().replace(/\s*>\s*/g, ' > '), label: d.etichetta || n.trim().replace(/\s*>\s*/g, ' \u2013 '), prima: +d.prima, ora: +d.ora }; });
-    var wa = 'https://wa.me/393487819352?text=' + encodeURIComponent('Ciao Elisa, vorrei prenotare con l\u2019offerta: ' + (o.titolo || 'offerta del momento'));
+    var wa = 'https://wa.me/393487819352?text=' + encodeURIComponent('Ciao Elisa, vorrei prenotare con l\u2019offerta: ' + (o.titolo || 'offerta del momento') + '. Ho letto e accetto le condizioni di prenotazione: https://artedielisa.it/condizioni.html');
 
     // Home: riquadro dopo la parte iniziale
     var hero = document.querySelector('.hero');

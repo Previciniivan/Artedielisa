@@ -489,3 +489,23 @@ dialog.lb{max-height:100vh;max-height:100dvh}
   .offer-card .btns{flex-direction:column;align-items:stretch;width:100%}
 }
 @media (prefers-reduced-motion:reduce){.offer-ico,.on-offer.flash{animation:none}}
+
+/* Condizioni di prenotazione: riquadro e nota */
+.terms{display:flex;gap:18px;align-items:flex-start;margin:44px 0 0;padding:24px 28px;background:var(--nebbia);border:1px solid var(--linea);border-radius:22px}
+.terms-ico{flex:none;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center}
+.terms-ico svg{width:24px;height:24px}
+.terms h3{font-size:1.25rem;margin:0 0 .3em}
+.terms p{margin:0 0 .6em;max-width:70ch}
+.terms-link{font-weight:600}
+.terms-note{font-size:.92rem;color:var(--muted);margin:10px auto 14px}
+@media (max-width:640px){
+  .terms{flex-direction:column;align-items:center;text-align:center;padding:22px 20px}
+  .terms p{margin-left:auto;margin-right:auto}
+}
+
+/* Sfondi scuri: al passaggio del mouse il testo resta chiaro (prima diventava blu e spariva) */
+@media (hover:hover) and (pointer:fine){
+  .site-foot a:hover{color:var(--cipria)}
+  .sec.dark a:hover,.sec.dark .review:hover{color:#fff}
+  .sec.dark .review:hover strong{color:var(--cipria)}
+}
